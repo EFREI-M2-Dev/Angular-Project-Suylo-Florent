@@ -50,11 +50,71 @@
       "id": 1,
       "name": "Athena",
       "licence": 1,
-      "price": "1 289,99€",
+      "price": "1289,99€",
       "sex": "F",
       "subtitle": "Déesse de la Sagesse, Protectrice du Sanctuaire : Athéna, réincarnée dans le corps de Saori Kido.",
-      "description": "Sauvée de la mort par le chevalier du sagittaire alors qu'elle n'était qu'un bébé, elle revient au sanctuaire 13 ans plus tard, accompagnée de ses fidèles chevaliers de bronze, pour défier son agresseur, le Grand Pope.\n\nAfin de rendre hommage à ce personnage central de la série animée, nous avons décidé de la représenter sous le regard bienveillant de la statue d'Athéna, dans une position confiante et sereine.",
-      "releaseDate": "2022-12-01"
+      "description": "Sauvée de la mort par le chevalier du sagittaire alors qu'elle n'était qu'un bébé, elle revient au sanctuaire 13 ans plus tard, accompagnée de ses fidèles chevaliers de bronze, pour défier son agresseur, le Grand Pope. Afin de rendre hommage à ce personnage central de la série animée, nous avons décidé de la représenter sous le regard bienveillant de la statue d'Athéna, dans une position confiante et sereine.",
+      "releaseDate": "21-10-2023"
+    },
+    {
+      "id": 2,
+      "name": "Sailor Moon",
+      "licence": 4,
+      "price": "429,99€",
+      "sex": "F",
+      "subtitle": "Guerrière de l'Amour et de la Justice",
+      "description": "Sailor Moon, de son vrai nom Usagi Tsukino, est la guerrière de l'amour et de la justice. Avec ses amis, les Sailor Senshi, elle combat les forces du mal pour protéger la Terre et l'univers. Connue pour son cœur pur et son courage, elle utilise le pouvoir du Cristal d'Argent pour vaincre ses ennemis.",
+      "releaseDate": "12-04-2020"
+    },
+    {
+      "id": 3,
+      "name": "Nami",
+      "licence": 3,
+      "price": "1199,99€",
+      "sex": "F",
+      "subtitle": "Navigatrice de l'Équipage du Chapeau de Paille",
+      "description": "Nami est la navigatrice de l'Équipage du Chapeau de Paille dans la série One Piece. Connue pour son intelligence et ses compétences en navigation, elle rêve de dessiner une carte complète du monde. Avec son bâton climatique, elle est capable de manipuler la météo pour aider ses amis dans les combats.",
+      "releaseDate": "10-09-2022"
+    },
+    {
+      "id": 4,
+      "name": "Boa Hancock",
+      "licence": 3,
+      "price": "799,99€",
+      "sex": "F",
+      "subtitle": "Impératrice Pirate et Capitaine des Pirates Kuja",
+      "description": "Boa Hancock est l'une des sept Grands Corsaires et l'impératrice de l'île des Amazones, Amazon Lily. Elle est connue pour sa beauté inégalée et son pouvoir de transformer ses ennemis en pierre grâce à son Fruit du Démon, le Mero Mero no Mi. Malgré son apparence froide, elle est profondément amoureuse de Luffy.",
+      "releaseDate": "09-09-2022"
+    },
+    {
+      "id": 5,
+      "name": "Perona",
+      "licence": 3,
+      "price": "316,99€",
+      "sex": "F",
+      "subtitle": "Princesse des Fantômes",
+      "description": "Perona est une ancienne commandante des Pirates de Gecko Moria et est connue sous le nom de Princesse des Fantômes. Grâce à son Fruit du Démon, le Horo Horo no Mi, elle peut créer et contrôler des fantômes qui peuvent déprimer ses ennemis. Elle a un style gothique et une personnalité enfantine.",
+      "releaseDate": "07-08-2023"
+    },
+    {
+      "id": 6,
+      "name": "Harley Quinn",
+      "licence": 5,
+      "price": "2239,99€",
+      "sex": "F",
+      "subtitle": "La Complice du Joker",
+      "description": "Harley Quinn, de son vrai nom Harleen Quinzel, est une ancienne psychiatre devenue la complice et amante du Joker. Elle est connue pour son comportement imprévisible et son amour pour le chaos. Armée de son maillet géant et de son esprit vif, elle est une adversaire redoutable dans l'univers de DC Comics.",
+      "releaseDate": "09-09-2022"
+    },
+    {
+      "id": 7,
+      "name": "Nico Robin",
+      "licence": 3,
+      "price": "385,99€",
+      "sex": "F",
+      "subtitle": "Archéologue de l'Équipage du Chapeau de Paille",
+      "description": "Nico Robin est l'archéologue de l'Équipage du Chapeau de Paille dans la série One Piece. Elle a mangé le Fruit du Démon Hana Hana no Mi, qui lui permet de faire pousser des parties de son corps sur n'importe quelle surface. Robin est à la recherche de l'histoire perdue du monde et des Ponéglyphes.",
+      "releaseDate": "04-05-2019"
     }
   ],
   "licences": [
@@ -72,11 +132,11 @@
     },
     {
       "id": 4,
-      "name": "Naruto"
+      "name": "Sailor Moon"
     },
     {
       "id": 5,
-      "name": "My Hero Academia"
+      "name": "DC Comics"
     }
   ]
 }
