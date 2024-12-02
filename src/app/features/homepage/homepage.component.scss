@@ -1,3 +1,5 @@
+@import "../../../styles/variables.scss";
+
 .hero {
   height: 88vh;
   width: 100%;
@@ -6,7 +8,6 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  overflow-x: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,5 +62,34 @@
         z-index: 3;
       }
     }
+  }
+
+  .scrolling-text {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    bottom: -50px;
+
+    .text-container {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      animation: scroll-text 15s linear infinite; /* Défilement infini */
+
+      span {
+        font-size: 91px;
+        color: $purple;
+        margin-right: 50px; /* Espace entre les mots */
+      }
+    }
+  }
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }

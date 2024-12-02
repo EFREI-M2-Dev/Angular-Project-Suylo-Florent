@@ -16,25 +16,35 @@ export class HomepageComponent implements AfterViewInit {
   floatingTexts!: QueryList<ElementRef>;
 
   ngAfterViewInit() {
-    this.floatingTexts.forEach((text) => {
-      this.galaxyFloatEffect(text.nativeElement);
+    const hero = document.querySelector('.athena') as HTMLElement;
+    const heroRect = hero.getBoundingClientRect();
+
+    this.floatingTexts.forEach((text, index) => {
+      this.galaxyFloatEffect(text.nativeElement, heroRect, index);
     });
   }
 
-  private galaxyFloatEffect(element: HTMLElement) {
+  private galaxyFloatEffect(
+    element: HTMLElement,
+    containerRect: DOMRect,
+    index: number
+  ) {
     const randomAmplitude = () => Math.random() * 8 + 8;
     const randomDuration = () => Math.random() * 4 + 3;
 
-    const animate = () => {
-      gsap.to(element, {
+    const timeline = gsap.timeline({ repeat: -1, yoyo: true });
+    timeline
+      .to(element, {
         duration: randomDuration(),
-        x: `+=${randomAmplitude() * (Math.random() < 0.5 ? -1 : 1)}`,
-        y: `+=${randomAmplitude() * (Math.random() < 0.5 ? -1 : 1)}`,
+        x: randomAmplitude() * Math.cos(index * 2 * Math.PI),
+        y: randomAmplitude() * Math.sin(index * 2 * Math.PI),
         ease: 'power1.inOut',
-        onComplete: animate,
+      })
+      .to(element, {
+        duration: randomDuration(),
+        x: randomAmplitude() * Math.sin(index * Math.PI),
+        y: randomAmplitude() * Math.cos(index * Math.PI),
+        ease: 'power1.inOut',
       });
-    };
-
-    animate();
   }
 }
