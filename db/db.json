@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Florent",
+      "lastName": "Paris",
+      "email": "florent.paris@efrei.net",
+      "password": "$2y$10$JaTwedf.7iKFl9gsrJI2huaBRCGScWYd64nBYQ9USjV57OJtSVbX6",
+      "role": 2
+    },
+    {
+      "id": 2,
+      "firstName": "Louis",
+      "lastName": "Lubineau",
+      "email": "louis.lubineau@efrei.net",
+      "password": "$2y$10$JaTwedf.7iKFl9gsrJI2huaBRCGScWYd64nBYQ9USjV57OJtSVbX6",
+      "role": 2
+    },
+    {
+      "id": 3,
+      "firstName": "Admin",
+      "lastName": "Admin",
+      "email": "admin@gmail.com",
+      "password": "$2y$10$JaTwedf.7iKFl9gsrJI2huaBRCGScWYd64nBYQ9USjV57OJtSVbX6",
+      "role": 2
+    },
+    {
+      "id": 4,
+      "firstName": "Test",
+      "lastName": "User",
+      "email": "test@gmail.com",
+      "password": "$2y$10$xMHi3mgUNSUk7hi.TSztV.cq1Hwm5Gceb9Q99CD8DDUZGjxHm9vrW",
+      "role": 1
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "user",
+      "label": "Visiteur"
+    },
+    {
+      "id": 2,
+      "name": "admin",
+      "label": "Administrateur"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Athena",
+      "licence": 1,
+      "price": "1 289,99€",
+      "sex": "F",
+      "subtitle": "Déesse de la Sagesse, Protectrice du Sanctuaire : Athéna, réincarnée dans le corps de Saori Kido.",
+      "description": "Sauvée de la mort par le chevalier du sagittaire alors qu'elle n'était qu'un bébé, elle revient au sanctuaire 13 ans plus tard, accompagnée de ses fidèles chevaliers de bronze, pour défier son agresseur, le Grand Pope.\n\nAfin de rendre hommage à ce personnage central de la série animée, nous avons décidé de la représenter sous le regard bienveillant de la statue d'Athéna, dans une position confiante et sereine.",
+      "releaseDate": "2022-12-01"
+    }
+  ],
+  "licences": [
+    {
+      "id": 1,
+      "name": "Saint Seiya"
+    },
+    {
+      "id": 2,
+      "name": "Dragon Ball"
+    },
+    {
+      "id": 3,
+      "name": "One Piece"
+    },
+    {
+      "id": 4,
+      "name": "Naruto"
+    },
+    {
+      "id": 5,
+      "name": "My Hero Academia"
+    }
+  ]
+}
