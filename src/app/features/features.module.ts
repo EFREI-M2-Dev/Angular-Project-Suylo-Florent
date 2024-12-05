@@ -1,5 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -15,6 +15,7 @@ import { InfiniteScrollComponent } from './homepage/infinite-scroll/infinite-scr
     RouterLink,
     RouterLinkActive,
     FormsModule,
+    NgOptimizedImage,
   ],
   exports: [HomepageComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

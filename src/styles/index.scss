@@ -2,7 +2,34 @@
 @import "./fonts.scss";
 @import "./variables.scss";
 
+html {
+  font-size: 10px;
+}
+
 body {
-  background-color: #fff;
+  background-color: #F6F6F6;
   font-family: sans-serif;
+}
+
+
+.container{
+  max-width: 1196px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.button{
+  font-family: "Anton", sans-serif;
+  font-size: 1.7rem;
+  color: var(--white);
+  background-color: var(--purpleLight);
+  padding: .9rem 3.1rem;
+  border-radius: 48px;
+  border: none;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+
+  &:hover{
+    background-color: var(--purple);
+  }
 }
