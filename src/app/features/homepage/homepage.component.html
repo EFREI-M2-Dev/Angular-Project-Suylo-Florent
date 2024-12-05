@@ -56,7 +56,24 @@
       </button>
     </div>
     <div class="products-list__content">
-
+      <div class="product-card" *ngFor="let product of products | slice:0:6">
+        <div class="product-card__img">
+          <img ngSrc="assets/home/athena-img-1.png" alt="Athena test" width="1044" height="1368">
+        </div>
+        <div class="product-card__content">
+          <div class="product-card__texts">
+            <p class="product-card__texts__name">
+              {{ product.name}}
+            </p>
+            <p class="product-card__texts__price">
+              {{ product.price }}
+            </p>
+          </div>
+          <div class="product-card__licence">
+            {{ product.licence }}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
