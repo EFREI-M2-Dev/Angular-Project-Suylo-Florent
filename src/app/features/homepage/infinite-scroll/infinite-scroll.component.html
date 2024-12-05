@@ -1,0 +1,21 @@
+<div class="scroll-container">
+  <div
+    class="scroll-content"
+    [ngClass]="{
+      top: positionClass === 'top',
+      bottom: positionClass === 'bottom'
+    }"
+    #scrollContent
+  >
+    <div
+      class="scroll-item"
+      *ngFor="let item of items; let i = index"
+      [ngClass]="{
+        'outline-text': i % 2 !== 0,
+        solid: i % 2 === 0,
+      }"
+    >
+      {{ item }}
+    </div>
+  </div>
+</div>

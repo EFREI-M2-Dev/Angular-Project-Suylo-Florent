@@ -1,0 +1,71 @@
+@import "../../../../styles/variables.scss";
+
+.scroll-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  transform: translateY(50%);
+  z-index: 5;
+
+  .scroll-content {
+    display: flex;
+    gap: 20px;
+    white-space: nowrap;
+
+    &.top {
+      overflow: hidden;
+      height: 50%;
+      position: absolute;
+      top: 0;
+
+      .scroll-item {
+        transform: translateY(15%);
+
+        &.outline-text {
+          color: transparent;
+          -webkit-text-stroke-width: 2px;
+          -webkit-text-stroke-color: white;
+        }
+
+        &.solid {
+          color: white;
+        }
+      }
+    }
+
+    &.bottom {
+      overflow: hidden;
+      height: 50%;
+      position: absolute;
+      bottom: 0;
+
+      .scroll-item {
+        transform: translateY(-91%);
+
+        &.outline-text {
+          color: transparent;
+          -webkit-text-stroke-width: 2px;
+          -webkit-text-stroke-color: $purple;
+        }
+
+        &.solid {
+          color: $purple;
+        }
+      }
+    }
+
+    .scroll-item {
+      padding: 0 20px;
+      border-radius: 5px;
+      white-space: nowrap;
+      font-family: Arial, sans-serif;
+      font-size: 91px;
+      font-family: "anton";
+    }
+  }
+}

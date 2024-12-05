@@ -69,17 +69,28 @@
     width: 100%;
     overflow: hidden;
     bottom: -50px;
+    height: 100px;
+    z-index: 5;
 
     .text-container {
       display: flex;
       align-items: center;
       white-space: nowrap;
-      animation: scroll-text 15s linear infinite; /* Défilement infini */
+      animation: scroll-text 15s linear infinite;
+      position: absolute;
+      left: 0;
 
       span {
         font-size: 91px;
         color: $purple;
-        margin-right: 50px; /* Espace entre les mots */
+        margin-right: 50px;
+        font-family: "anton";
+      }
+
+      &:last-of-type {
+        position: absolute;
+        top: 0;
+        left: 0;
       }
     }
   }

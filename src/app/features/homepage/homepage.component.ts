@@ -17,19 +17,14 @@ export class HomepageComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     const hero = document.querySelector('.athena') as HTMLElement;
-    const heroRect = hero.getBoundingClientRect();
 
     this.floatingTexts.forEach((text, index) => {
-      this.galaxyFloatEffect(text.nativeElement, heroRect, index);
+      this.galaxyFloatEffect(text.nativeElement, index);
     });
   }
 
-  private galaxyFloatEffect(
-    element: HTMLElement,
-    containerRect: DOMRect,
-    index: number
-  ) {
-    const randomAmplitude = () => Math.random() * 8 + 8;
+  private galaxyFloatEffect(element: HTMLElement, index: number) {
+    const randomAmplitude = () => Math.random() * 15 + 8;
     const randomDuration = () => Math.random() * 4 + 3;
 
     const timeline = gsap.timeline({ repeat: -1, yoyo: true });
