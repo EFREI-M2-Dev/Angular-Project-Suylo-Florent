@@ -4,34 +4,71 @@
   </div>
 
   <div class="form-container">
-    <div *ngIf="mode === 'login'">
-      <form>
-        <h2>LOGIN</h2>
-        <app-input-field
-          type="email"
-          placeholder="Enter your Email"
-        ></app-input-field>
-        <app-input-field
-          type="password"
-          placeholder="Enter your Password"
-        ></app-input-field>
-        <button>Submit</button>
-      </form>
+    <div class="toggle">
+      <button
+        class="toggle-btn"
+        [class.active]="mode === 'login'"
+        (click)="switchMode('login')"
+      >
+        Login
+      </button>
+      <button
+        class="toggle-btn"
+        [class.active]="mode === 'register'"
+        (click)="switchMode('register')"
+      >
+        Register
+      </button>
+      <div class="slider-content">
+        <div class="slider" [class.left]="mode === 'login'"></div>
+      </div>
     </div>
 
-    <div *ngIf="mode === 'register'">
-      <form>
-        <h2>REGISTER</h2>
-        <app-input-field
-          type="email"
-          placeholder="Enter your Email"
-        ></app-input-field>
-        <app-input-field
-          type="password"
-          placeholder="Enter your Password"
-        ></app-input-field>
-        <button>Submit</button>
-      </form>
-    </div>
+    <form class="form-content" *ngIf="mode === 'login'">
+      <app-input-field
+        type="email"
+        placeholder="Enter your Email"
+      ></app-input-field>
+      <app-input-field
+        type="password"
+        placeholder="Enter your Password"
+      ></app-input-field>
+      <div class="form-bottom">
+        <div>
+          <div class="remember-me">
+            <input type="checkbox" id="remember" />
+            <span>Se rappeler de moi</span>
+          </div>
+          <a>Mot de passe oublié ?</a>
+        </div>
+        <button class="button">Se connecter</button>
+        <p>
+          Nouveau sur la plateforme ?
+          <a (click)="switchMode('register')">Créer un compte</a>
+        </p>
+      </div>
+    </form>
+
+    <form class="form-content" *ngIf="mode === 'register'">
+      <app-input-field
+        type="email"
+        placeholder="Enter your Email"
+      ></app-input-field>
+      <app-input-field
+        type="password"
+        placeholder="Enter your Password"
+      ></app-input-field>
+      <app-input-field
+        type="password"
+        placeholder="Confirm Password"
+      ></app-input-field>
+      <div class="form-bottom">
+        <button class="button">S'enregistrer</button>
+        <p>
+          Vous avez déjà un compte ?
+          <a (click)="switchMode('login')">Se connecter</a>
+        </p>
+      </div>
+    </form>
   </div>
 </div>

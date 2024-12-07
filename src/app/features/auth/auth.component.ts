@@ -16,4 +16,8 @@ export class AuthComponent implements OnInit {
       this.mode = params.get('mode') || 'login';
     });
   }
+
+  switchMode(mode: string): void {
+    this.mode = mode;
+  }
 }

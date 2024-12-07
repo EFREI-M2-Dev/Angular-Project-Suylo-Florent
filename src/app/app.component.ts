@@ -1,10 +1,23 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  template: `
+    <ng-container *ngIf="!shouldHideHeader">
+      <app-header></app-header>
+    </ng-container>
+    <router-outlet></router-outlet>
+  `,
 })
 export class AppComponent {
   title = 'final-project';
+
+  constructor(private router: Router) {}
+
+  get shouldHideHeader(): boolean {
+    const hiddenRoutes = ['/auth/login', '/auth/register'];
+    return hiddenRoutes.includes(this.router.url);
+  }
 }
