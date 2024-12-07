@@ -29,7 +29,7 @@
       "firstName": "Test",
       "lastName": "User",
       "email": "test@gmail.com",
-      "password": "$2y$10$xMHi3mgUNSUk7hi.TSztV.cq1Hwm5Gceb9Q99CD8DDUZGjxHm9vrW",
+      "password": "password",
       "role": 1
     }
   ],

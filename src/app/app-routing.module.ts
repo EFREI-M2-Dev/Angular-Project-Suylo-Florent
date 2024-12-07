@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './features/homepage/homepage.component';
 import { AuthComponent } from './features/auth/auth.component';
+import { authGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
   {
     path: 'auth/:mode',
     component: AuthComponent,
+    canActivate: [authGuard],
   },
 ];
 

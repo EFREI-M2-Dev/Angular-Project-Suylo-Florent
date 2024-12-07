@@ -5,6 +5,9 @@
       <li><a routerLink="/shop">Boutique</a></li>
       <li><a routerLink="/account">Mon compte</a></li>
       <li><a href="#">Panier</a></li>
+      <li *ngIf="isUserConnected()">
+        <i class="fa-solid fa-right-from-bracket fa-lg" (click)="logout()"></i>
+      </li>
     </ul>
   </nav>
 </header>

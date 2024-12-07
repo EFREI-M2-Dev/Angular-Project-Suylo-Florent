@@ -1,4 +1,4 @@
-.header{
+.header {
   background-color: var(--white);
   height: 7.2rem;
   max-width: 118.8rem;
@@ -11,11 +11,11 @@
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-  @media screen and (max-width: 1350px){
+  @media screen and (max-width: 1350px) {
     max-width: 100%;
   }
 
-  &::before{
+  &::before {
     content: "";
     position: absolute;
     top: 0;
@@ -25,7 +25,7 @@
     height: 72px;
   }
 
-  &::after{
+  &::after {
     content: "";
     position: absolute;
     top: 0;
@@ -35,41 +35,46 @@
     height: 72px;
   }
 
-  nav{
+  nav {
     height: 100%;
-    ul{
+    ul {
       height: 100%;
       display: flex;
       justify-content: space-evenly;
       align-items: center;
 
-      li{
+      li {
         font-family: "Anton", sans-serif;
         text-transform: uppercase;
 
-        a{
+        a {
           text-decoration: none;
           font-size: 2.5rem;
           color: var(--darkPurple);
           position: relative;
-          padding-bottom: .5rem;
+          padding-bottom: 0.5rem;
 
-          &::after{
+          &::after {
             content: "";
             display: block;
             width: 0;
-            height: .5rem;
+            height: 0.5rem;
             background-color: var(--purpleLight);
-            transition: width .2s ease-in-out;
-            margin-top: .2rem;
+            transition: width 0.2s ease-in-out;
+            margin-top: 0.2rem;
           }
 
-          &:hover{
-            &::after{
+          &:hover {
+            &::after {
               content: "";
               width: 100%;
             }
           }
+        }
+
+        i {
+          margin-bottom: 12px;
+          cursor: pointer;
         }
       }
     }

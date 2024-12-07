@@ -5,5 +5,13 @@
     <i *ngIf="type === 'text'" class="fa fa-pencil-alt"></i>
   </span>
 
-  <input [type]="type" [placeholder]="placeholder" class="input-field" />
+  <input
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    [disabled]="disabled"
+    (input)="handleInput($event)"
+    (blur)="handleBlur()"
+    class="input-field"
+  />
 </div>

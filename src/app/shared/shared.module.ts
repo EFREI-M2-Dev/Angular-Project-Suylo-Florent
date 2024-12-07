@@ -4,12 +4,8 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [
-    HeaderComponent
-  ],
+  declarations: [HeaderComponent],
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
-  exports: [
-    HeaderComponent
-  ]
+  exports: [HeaderComponent],
 })
 export class SharedModule {}

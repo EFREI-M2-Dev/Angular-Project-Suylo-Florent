@@ -24,14 +24,21 @@
       </div>
     </div>
 
-    <form class="form-content" *ngIf="mode === 'login'">
+    <form
+      [formGroup]="authForm"
+      (ngSubmit)="onSubmit()"
+      class="form-content"
+      *ngIf="mode === 'login'"
+    >
       <app-input-field
         type="email"
         placeholder="Enter your Email"
+        formControlName="email"
       ></app-input-field>
       <app-input-field
         type="password"
         placeholder="Enter your Password"
+        formControlName="password"
       ></app-input-field>
       <div class="form-bottom">
         <div>
@@ -41,7 +48,9 @@
           </div>
           <a>Mot de passe oublié ?</a>
         </div>
-        <button class="button">Se connecter</button>
+        <button type="submit" [disabled]="authForm.invalid" class="button">
+          Se connecter
+        </button>
         <p>
           Nouveau sur la plateforme ?
           <a (click)="switchMode('register')">Créer un compte</a>
@@ -49,21 +58,31 @@
       </div>
     </form>
 
-    <form class="form-content" *ngIf="mode === 'register'">
+    <form
+      [formGroup]="authForm"
+      (ngSubmit)="onSubmit()"
+      class="form-content"
+      *ngIf="mode === 'register'"
+    >
       <app-input-field
         type="email"
         placeholder="Enter your Email"
+        formControlName="email"
       ></app-input-field>
       <app-input-field
         type="password"
         placeholder="Enter your Password"
+        formControlName="password"
       ></app-input-field>
       <app-input-field
         type="password"
         placeholder="Confirm Password"
+        formControlName="confirmPassword"
       ></app-input-field>
       <div class="form-bottom">
-        <button class="button">S'enregistrer</button>
+        <button type="submit" [disabled]="authForm.invalid" class="button">
+          S'enregistrer
+        </button>
         <p>
           Vous avez déjà un compte ?
           <a (click)="switchMode('login')">Se connecter</a>
