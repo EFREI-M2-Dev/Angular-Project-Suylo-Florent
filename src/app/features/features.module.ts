@@ -5,9 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SharedModule } from '../shared/shared.module';
 import { InfiniteScrollComponent } from './homepage/infinite-scroll/infinite-scroll.component';
+import { AuthComponent } from './auth/auth.component';
+import { InputFieldComponent } from './auth/input-field/input-field.component';
 
 @NgModule({
-  declarations: [HomepageComponent, InfiniteScrollComponent],
+  declarations: [HomepageComponent, InfiniteScrollComponent, AuthComponent, InputFieldComponent],
   imports: [
     CommonModule,
     SharedModule,

@@ -1,0 +1,9 @@
+<div class="input-wrapper">
+  <span class="input-icon">
+    <i *ngIf="type === 'email'" class="fa fa-envelope"></i>
+    <i *ngIf="type === 'password'" class="fa fa-lock"></i>
+    <i *ngIf="type === 'text'" class="fa fa-pencil-alt"></i>
+  </span>
+
+  <input [type]="type" [placeholder]="placeholder" class="input-field" />
+</div>

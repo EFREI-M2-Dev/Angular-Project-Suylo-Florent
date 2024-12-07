@@ -1,0 +1,50 @@
+@import "../../../styles/variables.scss";
+
+.auth {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 55% 45%;
+
+  .illustration {
+    width: 95%;
+    max-width: 800px;
+    background: url("../../../assets/galaxy.png"),
+      linear-gradient(90deg, #0f0b1d 0%, #391c73 56%, #1d122c 100%) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 20px;
+    border-radius: 20px;
+    justify-self: end;
+
+    img {
+      width: 100%;
+      max-width: 700px;
+      transform: translateX(100px);
+    }
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    > div {
+      width: 100%;
+      padding: 0 100px;
+      box-sizing: border-box;
+
+      form {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
+}

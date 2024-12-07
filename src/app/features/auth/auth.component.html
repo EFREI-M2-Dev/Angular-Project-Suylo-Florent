@@ -1,0 +1,37 @@
+<div class="auth">
+  <div class="illustration">
+    <img src="assets/gohan.webp" />
+  </div>
+
+  <div class="form-container">
+    <div *ngIf="mode === 'login'">
+      <form>
+        <h2>LOGIN</h2>
+        <app-input-field
+          type="email"
+          placeholder="Enter your Email"
+        ></app-input-field>
+        <app-input-field
+          type="password"
+          placeholder="Enter your Password"
+        ></app-input-field>
+        <button>Submit</button>
+      </form>
+    </div>
+
+    <div *ngIf="mode === 'register'">
+      <form>
+        <h2>REGISTER</h2>
+        <app-input-field
+          type="email"
+          placeholder="Enter your Email"
+        ></app-input-field>
+        <app-input-field
+          type="password"
+          placeholder="Enter your Password"
+        ></app-input-field>
+        <button>Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
