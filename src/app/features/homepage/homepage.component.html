@@ -1,6 +1,6 @@
 <section class="hero">
   <div class="hero-content-wrapper">
-    <img src="assets/athena.png" alt="Hero Image" class="athena" />
+    <img src="assets/athena.png" alt="Hero Image" class="athena"/>
 
     <span #floatingText1>新</span>
     <span #floatingText2>女</span>
@@ -38,13 +38,13 @@
       Déesse de la Sagesse, Protectrice du Sanctuaire : Athéna, réincarnée dans
       le corps de Saori Kido.
     </h2>
-    <hr />
+    <hr/>
     <p>
       Sauvée de la mort par le chevalier du sagittaire alors qu'elle n'était
       qu'un bébé, elle revient au sanctuaire 13 ans plus tard, accompagnée de
       ses fidèles chevaliers de bronze, pour défier son agresseur, le Grand
       Pope.
-      <br /><br />
+      <br/><br/>
       Afin de rendre hommage à ce personnage central de la série animée, nous
       avons décidé de la représenter sous le regard bienveillant de la statue
       d'Athéna, dans une position confiante et sereine.
@@ -61,7 +61,7 @@
         <p>
           Parmis la boutique Zô, voici quelques produits qui pourraient vous
           intéresser.
-          <br />
+          <br/>
           N'hésitez pas à consulter notre catalogue pour découvrir l'ensemble de
           nos produits.
         </p>
@@ -69,32 +69,7 @@
       <button class="button">Découvrir la boutique</button>
     </div>
     <div class="products-list__content">
-      <div
-        class="product-card"
-        *ngFor="let product of products | slice : 0 : 6"
-      >
-        <div class="product-card__img">
-          <img
-            ngSrc="assets/home/athena-img-1.png"
-            alt="Athena test"
-            width="1044"
-            height="1368"
-          />
-        </div>
-        <div class="product-card__content">
-          <div class="product-card__texts">
-            <p class="product-card__texts__name">
-              {{ product.name }}
-            </p>
-            <p class="product-card__texts__price">
-              {{ product.price }}
-            </p>
-          </div>
-          <div class="product-card__licence">
-            {{ product.licence.name }}
-          </div>
-        </div>
-      </div>
+      <app-product-card *ngFor="let product of products" [product]="product" />
     </div>
   </div>
 </section>

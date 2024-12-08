@@ -53,7 +53,7 @@ export class HomepageComponent implements AfterViewInit, OnInit {
   }
 
   loadProducts() {
-    this.productService.getProducts().subscribe(
+    this.productService.getProductsHome().subscribe(
       data => {
         this.products = data;
       }

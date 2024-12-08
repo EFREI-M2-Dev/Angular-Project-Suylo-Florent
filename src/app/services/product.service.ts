@@ -11,6 +11,22 @@ export class ProductService {
 
   constructor(private http: HttpClient, private licenceService: LicenceService) { }
 
+  getProductsHome(): Observable<ProductModel[]> {
+    return this.http.get<ProductModel[]>('http://localhost:3000/products?_end=6').pipe(
+      switchMap(products => {
+        const productObservables = products.map(product =>
+          this.licenceService.getLicenceById(product.licence).pipe(
+            map(licence => ({
+              ...product,
+              licence
+            }))
+          )
+        );
+        return forkJoin(productObservables);
+      })
+    );
+  }
+
   getProducts(): Observable<ProductModel[]> {
     return this.http.get<ProductModel[]>('http://localhost:3000/products').pipe(
       switchMap(products => {

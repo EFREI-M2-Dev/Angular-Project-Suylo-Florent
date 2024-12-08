@@ -7,6 +7,9 @@ import { SharedModule } from '../shared/shared.module';
 import { InfiniteScrollComponent } from './homepage/infinite-scroll/infinite-scroll.component';
 import { AuthComponent } from './auth/auth.component';
 import { InputFieldComponent } from './auth/input-field/input-field.component';
+import {LicenceCardComponent} from "../components/licence-card/licence-card.component";
+import {ProductCardComponent} from "../components/product-card/product-card.component";
+import { ShopComponent } from './shop/shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +17,9 @@ import { InputFieldComponent } from './auth/input-field/input-field.component';
     InfiniteScrollComponent,
     AuthComponent,
     InputFieldComponent,
+    LicenceCardComponent,
+    ProductCardComponent,
+    ShopComponent,
   ],
   imports: [
     CommonModule,
