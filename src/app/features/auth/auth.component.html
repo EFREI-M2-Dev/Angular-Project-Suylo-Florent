@@ -10,14 +10,14 @@
         [class.active]="mode === 'login'"
         (click)="switchMode('login')"
       >
-        Login
+        Connexion
       </button>
       <button
         class="toggle-btn"
         [class.active]="mode === 'register'"
         (click)="switchMode('register')"
       >
-        Register
+        Inscription
       </button>
       <div class="slider-content">
         <div class="slider" [class.left]="mode === 'login'"></div>
@@ -32,12 +32,12 @@
     >
       <app-input-field
         type="email"
-        placeholder="Enter your Email"
+        placeholder="Entrer votre email"
         formControlName="email"
       ></app-input-field>
       <app-input-field
         type="password"
-        placeholder="Enter your Password"
+        placeholder="Entrer votre mot de passe"
         formControlName="password"
       ></app-input-field>
       <div class="form-bottom">
@@ -66,17 +66,17 @@
     >
       <app-input-field
         type="email"
-        placeholder="Enter your Email"
+        placeholder="Entrer votre email"
         formControlName="email"
       ></app-input-field>
       <app-input-field
         type="password"
-        placeholder="Enter your Password"
+        placeholder="Entrer votre mot de passe"
         formControlName="password"
       ></app-input-field>
       <app-input-field
         type="password"
-        placeholder="Confirm Password"
+        placeholder="Confirmer votre mot de passe"
         formControlName="confirmPassword"
       ></app-input-field>
       <div class="form-bottom">
