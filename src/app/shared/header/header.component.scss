@@ -54,7 +54,7 @@
           position: relative;
           padding-bottom: 0.5rem;
 
-          &::after {
+          &::after, &.--active::after {
             content: "";
             display: block;
             width: 0;
@@ -67,6 +67,12 @@
           &:hover {
             &::after {
               content: "";
+              width: 100%;
+            }
+          }
+
+          &.--active {
+            &::after{
               width: 100%;
             }
           }

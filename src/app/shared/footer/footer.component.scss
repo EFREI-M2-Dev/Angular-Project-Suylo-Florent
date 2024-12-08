@@ -1,0 +1,72 @@
+.footer{
+  background-color: var(--white);
+  border-top: 5px solid var(--purpleLight);
+  padding: 5rem 2rem;
+
+
+  &__content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 4rem;
+    place-items: center;
+
+  }
+
+  &__logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    p{
+      font-family: "Anton", sans-serif;
+      font-size: 3.6rem;
+      font-weight: bold;
+      color: var(--purple);
+    }
+  }
+
+  &__links, &__legals, &__social{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    a{
+      display: inline-block;
+      font-family: "ddin", sans-serif;
+      font-weight: bold;
+      font-size: 2.6rem;
+      color: var(--purple);
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      text-decoration: none;
+      margin-bottom: 1rem;
+
+      &:hover{
+        color: var(--purpleDark);
+      }
+    }
+  }
+
+  &__social{
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+.post-footer{
+  background: url("../../../assets/galaxy.png"),
+  linear-gradient(90deg, #0f0b1d 0%, #391c73 56%, #1d122c 100%) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+
+  font-family: "ddin", sans-serif;
+  font-size: 1.6rem;
+  color: var(--white);
+}
