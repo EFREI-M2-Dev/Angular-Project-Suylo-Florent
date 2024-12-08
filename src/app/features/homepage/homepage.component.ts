@@ -6,7 +6,7 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { gsap } from 'gsap';
-import {Product} from "../../interfaces/Product";
+import {ProductModel} from "../../shared/models/product.model";
 import {ProductService} from "../../services/product.service";
 @Component({
   selector: 'app-homepage',
@@ -16,7 +16,7 @@ import {ProductService} from "../../services/product.service";
 export class HomepageComponent implements AfterViewInit, OnInit {
   @ViewChildren('floatingText1, floatingText2, floatingText3, floatingText4')
   floatingTexts!: QueryList<ElementRef>;
-  products: Product[] = [];
+  products: ProductModel[] = [];
 
   constructor(private productService: ProductService) { }
 
