@@ -221,3 +221,57 @@
   }
 }
 
+.newsletter{
+  padding: 8rem 1rem;
+  background: linear-gradient(95.52deg, #0F0B1D 4.91%, #391C73 56.9%, #1D122C 97.17%);
+
+  &__content{
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+      font-family: "Anton", sans-serif;
+      font-size: 4.8rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+
+      span{
+        -webkit-text-stroke: 1px var(--white);
+        letter-spacing: .2rem;
+        color: transparent;
+      }
+    }
+
+    p{
+      font-family: "ddin", sans-serif;
+      font-weight: bold;
+      font-size: 2.3rem;
+      line-height: 1.15;
+      letter-spacing: -0.05rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    form{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    input{
+      width: 100%;
+      padding: 1.5rem 2rem;
+      border-radius: 48px;
+      border: none;
+      background-color: var(--white);
+      font-family: "ddin", sans-serif;
+      font-weight: bold;
+      font-size: 1.6rem;
+      color: var(--text);
+      min-width: 25rem;
+    }
+  }
+}
