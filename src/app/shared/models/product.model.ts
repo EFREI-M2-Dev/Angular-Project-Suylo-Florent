@@ -9,4 +9,6 @@ export interface ProductModel {
   subtitle: string;
   description: string;
   releaseDate: string;
+  imgCover?: string;
+  isFeatured?: boolean;
 }

@@ -12,7 +12,7 @@ export class ProductService {
   constructor(private http: HttpClient, private licenceService: LicenceService) { }
 
   getProductsHome(): Observable<ProductModel[]> {
-    return this.http.get<ProductModel[]>('http://localhost:3000/products?_end=6').pipe(
+    return this.http.get<ProductModel[]>('http://localhost:3000/products?_end=6&isFeatured=true').pipe(
       switchMap(products => {
         const productObservables = products.map(product =>
           this.licenceService.getLicenceById(product.licence).pipe(

@@ -1,7 +1,7 @@
 <a class="product-card" [routerLink]="'products/' + product.id">
   <div class="product-card__img">
     <img
-      ngSrc="assets/home/athena-img-1.png"
+      [src]="product.imgCover ? product.imgCover : 'assets/home/athena-img-1.png'"
       alt="Athena test"
       width="1044"
       height="1368"
