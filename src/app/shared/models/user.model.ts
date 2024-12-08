@@ -1,10 +1,10 @@
-import {Role} from "./Role";
+import {RoleModel} from "./role.model";
 
-export interface User {
+export interface UserModel {
   id: number;
   firstName: string;
   lastName: string;
   email: string;
   password: string;
-  role: Role;
+  role: RoleModel;
 }

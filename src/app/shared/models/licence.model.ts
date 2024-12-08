@@ -1,4 +1,4 @@
-export interface Licence {
+export interface LicenceModel {
   id: string;
   name: string;
 }

@@ -1,9 +1,9 @@
-import {Licence} from "./Licence";
+import {LicenceModel} from "./licence.model";
 
-export interface Product{
+export interface ProductModel {
   id: number;
   name: string;
-  licence: Licence;
+  licence: LicenceModel;
   price: string;
   sex: string;
   subtitle: string;

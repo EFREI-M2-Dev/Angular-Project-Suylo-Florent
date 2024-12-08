@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "firstName": "Florent",
       "lastName": "Paris",
       "email": "florent.paris@efrei.net",
@@ -9,7 +9,7 @@
       "role": 2
     },
     {
-      "id": 2,
+      "id": "2",
       "firstName": "Louis",
       "lastName": "Lubineau",
       "email": "louis.lubineau@efrei.net",
@@ -17,7 +17,7 @@
       "role": 2
     },
     {
-      "id": 3,
+      "id": "3",
       "firstName": "Admin",
       "lastName": "Admin",
       "email": "admin@gmail.com",
@@ -25,7 +25,7 @@
       "role": 2
     },
     {
-      "id": 4,
+      "id": "4",
       "firstName": "Test",
       "lastName": "User",
       "email": "test@gmail.com",
@@ -35,21 +35,21 @@
   ],
   "roles": [
     {
-      "id": 1,
+      "id": "1",
       "name": "user",
       "label": "Visiteur"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "admin",
       "label": "Administrateur"
     }
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Athena",
-      "licence": 1,
+      "licence": "1",
       "price": "1289,99€",
       "sex": "F",
       "subtitle": "Déesse de la Sagesse, Protectrice du Sanctuaire : Athéna, réincarnée dans le corps de Saori Kido.",
@@ -57,9 +57,9 @@
       "releaseDate": "21-10-2023"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Sailor Moon",
-      "licence": 4,
+      "licence": "4",
       "price": "429,99€",
       "sex": "F",
       "subtitle": "Guerrière de l'Amour et de la Justice",
@@ -67,9 +67,9 @@
       "releaseDate": "12-04-2020"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Nami",
-      "licence": 3,
+      "licence": "3",
       "price": "1199,99€",
       "sex": "F",
       "subtitle": "Navigatrice de l'Équipage du Chapeau de Paille",
@@ -77,9 +77,9 @@
       "releaseDate": "10-09-2022"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Boa Hancock",
-      "licence": 3,
+      "licence": "3",
       "price": "799,99€",
       "sex": "F",
       "subtitle": "Impératrice Pirate et Capitaine des Pirates Kuja",
@@ -87,9 +87,9 @@
       "releaseDate": "09-09-2022"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Perona",
-      "licence": 3,
+      "licence": "3",
       "price": "316,99€",
       "sex": "F",
       "subtitle": "Princesse des Fantômes",
@@ -97,9 +97,9 @@
       "releaseDate": "07-08-2023"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Harley Quinn",
-      "licence": 5,
+      "licence": "5",
       "price": "2239,99€",
       "sex": "F",
       "subtitle": "La Complice du Joker",
@@ -107,9 +107,9 @@
       "releaseDate": "09-09-2022"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Nico Robin",
-      "licence": 3,
+      "licence": "3",
       "price": "385,99€",
       "sex": "F",
       "subtitle": "Archéologue de l'Équipage du Chapeau de Paille",
@@ -119,23 +119,23 @@
   ],
   "licences": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Saint Seiya"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Dragon Ball"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "One Piece"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Sailor Moon"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "DC Comics"
     }
   ]
