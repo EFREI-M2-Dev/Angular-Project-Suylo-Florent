@@ -1,91 +1,93 @@
-<section class="hero">
-  <div class="hero-content-wrapper">
-    <img src="assets/athena.png" alt="Hero Image" class="athena"/>
+<main class="homepage">
+  <section class="hero">
+    <div class="hero-content-wrapper">
+      <img src="assets/athena.png" alt="Hero Image" class="athena"/>
 
-    <span #floatingText1>新</span>
-    <span #floatingText2>女</span>
-    <span #floatingText3>神</span>
-    <span #floatingText4>像</span>
-  </div>
-
-  <app-infinite-scroll [positionClass]="'top'"></app-infinite-scroll>
-  <app-infinite-scroll [positionClass]="'bottom'"></app-infinite-scroll>
-</section>
-
-<section class="after-hero container">
-  <div class="after-hero__images">
-    <img
-      ngSrc="assets/home/athena-img-1.png"
-      alt="Athena ProductModel 1"
-      width="1044"
-      height="1368"
-    />
-    <img
-      ngSrc="assets/home/athena-img-2.png"
-      alt="Athena ProductModel 2"
-      width="525"
-      height="648"
-    />
-    <img
-      ngSrc="assets/home/athena-img-3.png"
-      alt="Athena ProductModel 3"
-      width="525"
-      height="672"
-    />
-  </div>
-  <div class="after-hero__content">
-    <h2>
-      Déesse de la Sagesse, Protectrice du Sanctuaire : Athéna, réincarnée dans
-      le corps de Saori Kido.
-    </h2>
-    <hr/>
-    <p>
-      Sauvée de la mort par le chevalier du sagittaire alors qu'elle n'était
-      qu'un bébé, elle revient au sanctuaire 13 ans plus tard, accompagnée de
-      ses fidèles chevaliers de bronze, pour défier son agresseur, le Grand
-      Pope.
-      <br/><br/>
-      Afin de rendre hommage à ce personnage central de la série animée, nous
-      avons décidé de la représenter sous le regard bienveillant de la statue
-      d'Athéna, dans une position confiante et sereine.
-    </p>
-    <button class="button">Découvrir la figurine</button>
-  </div>
-</section>
-
-<section class="products-list">
-  <div class="container">
-    <div class="products-list__head">
-      <div class="products-list__titles">
-        <h2>Quelques <span>produits</span>...</h2>
-        <p>
-          Parmis la boutique Zô, voici quelques produits qui pourraient vous
-          intéresser.
-          <br/>
-          N'hésitez pas à consulter notre catalogue pour découvrir l'ensemble de
-          nos produits.
-        </p>
-      </div>
-      <button class="button">Découvrir la boutique</button>
+      <span #floatingText1>新</span>
+      <span #floatingText2>女</span>
+      <span #floatingText3>神</span>
+      <span #floatingText4>像</span>
     </div>
-    <div class="products-list__content">
-      <app-product-card *ngFor="let product of products" [product]="product" />
-    </div>
-  </div>
-</section>
 
-<section class="newsletter">
-  <div class="container">
-    <div class="newsletter__content">
-      <h2> Abonnez-vous à notre <span>Newsletter</span></h2>
+    <app-infinite-scroll [positionClass]="'top'"></app-infinite-scroll>
+    <app-infinite-scroll [positionClass]="'bottom'"></app-infinite-scroll>
+  </section>
+
+  <section class="after-hero container">
+    <div class="after-hero__images">
+      <img
+        ngSrc="assets/home/athena-img-1.png"
+        alt="Athena ProductModel 1"
+        width="1044"
+        height="1368"
+      />
+      <img
+        ngSrc="assets/home/athena-img-2.png"
+        alt="Athena ProductModel 2"
+        width="525"
+        height="648"
+      />
+      <img
+        ngSrc="assets/home/athena-img-3.png"
+        alt="Athena ProductModel 3"
+        width="525"
+        height="672"
+      />
+    </div>
+    <div class="after-hero__content">
+      <h2>
+        Déesse de la Sagesse, Protectrice du Sanctuaire : Athéna, réincarnée dans
+        le corps de Saori Kido.
+      </h2>
+      <hr/>
       <p>
-        Inscrivez-vous à notre newsletter pour être informé des dernières<br>
-        nouveautés, promotions et événements de la boutique Zô.
+        Sauvée de la mort par le chevalier du sagittaire alors qu'elle n'était
+        qu'un bébé, elle revient au sanctuaire 13 ans plus tard, accompagnée de
+        ses fidèles chevaliers de bronze, pour défier son agresseur, le Grand
+        Pope.
+        <br/><br/>
+        Afin de rendre hommage à ce personnage central de la série animée, nous
+        avons décidé de la représenter sous le regard bienveillant de la statue
+        d'Athéna, dans une position confiante et sereine.
       </p>
-      <form>
-        <input type="email" placeholder="Votre adresse email"/>
-        <button class="button">S'inscrire</button>
-      </form>
+      <button class="button">Découvrir la figurine</button>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="products-list">
+    <div class="container">
+      <div class="products-list__head">
+        <div class="products-list__titles">
+          <h2>Quelques <span>produits</span>...</h2>
+          <p>
+            Parmis la boutique Zô, voici quelques produits qui pourraient vous
+            intéresser.
+            <br/>
+            N'hésitez pas à consulter notre catalogue pour découvrir l'ensemble de
+            nos produits.
+          </p>
+        </div>
+        <button class="button">Découvrir la boutique</button>
+      </div>
+      <div class="products-list__content">
+        <app-product-card *ngFor="let product of products" [product]="product"/>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter__content">
+        <h2> Abonnez-vous à notre <span>Newsletter</span></h2>
+        <p>
+          Inscrivez-vous à notre newsletter pour être informé des dernières<br>
+          nouveautés, promotions et événements de la boutique Zô.
+        </p>
+        <form>
+          <input type="email" placeholder="Votre adresse email"/>
+          <button class="button">S'inscrire</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
