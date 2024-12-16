@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { FeaturesModule } from './features/features.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
   declarations: [AppComponent],

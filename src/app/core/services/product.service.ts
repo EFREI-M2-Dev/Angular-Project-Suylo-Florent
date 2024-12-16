@@ -43,7 +43,7 @@ export class ProductService {
     );
   }
 
-  getProductById(id: number): Observable<ProductModel> {
+  getProductById(id: string): Observable<ProductModel> {
     return this.http.get<ProductModel>(`http://localhost:3000/products/${id}`).pipe(
       switchMap(product =>
         this.licenceService.getLicenceById(product.licence).pipe(

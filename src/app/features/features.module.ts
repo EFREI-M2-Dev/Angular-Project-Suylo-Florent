@@ -7,12 +7,12 @@ import { SharedModule } from '../shared/shared.module';
 import { InfiniteScrollComponent } from './homepage/infinite-scroll/infinite-scroll.component';
 import { AuthComponent } from './auth/auth.component';
 import { InputFieldComponent } from './auth/input-field/input-field.component';
-import { LicenceCardComponent } from '../components/licence-card/licence-card.component';
-import { ProductCardComponent } from '../components/product-card/product-card.component';
 import { ShopComponent } from './shop/shop/shop.component';
 import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
 import { BreadcrumbComponent } from './cart/breadcrumb/breadcrumb.component';
+import {LicenceCardComponent} from "../shared/licence-card/licence-card.component";
+import {ProductCardComponent} from "../shared/product-card/product-card.component";
 
 @NgModule({
   declarations: [

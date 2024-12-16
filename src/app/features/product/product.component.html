@@ -1,5 +1,38 @@
-<main class="product">
+<main class="product container">
   <section class="product-details">
-
+    <div class="product-details__image">
+      <img [src]="product.imgCover">
+    </div>
+    <div class="product-details__content">
+      <h1 class="product-details__title">
+        {{ product.name }}
+      </h1>
+      <p class="product-details__price">
+        {{ product.price }}
+      </p>
+      <p class="product-details__description">
+        {{ product.description }}
+      </p>
+      <button class="product-details__button button">
+        Ajouter au panier
+      </button>
+      <details class="product-details__accordion">
+        <summary class="product-details__accordion__summary">
+          Description
+        </summary>
+        <p class="product-details__accordion__content">
+          {{product.subtitle}}
+        </p>
+      </details>
+      <details class="product-details__accordion">
+        <summary class="product-details__accordion__summary">
+          Composition
+        </summary>
+        <p class="product-details__accordion__content">
+          {{ product.sex }}
+        </p>
+      </details>
+      <app-licence-card [licence]="product.licence" class="product-details__licence"></app-licence-card>
+    </div>
   </section>
 </main>
