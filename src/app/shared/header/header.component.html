@@ -1,10 +1,31 @@
 <header class="header">
   <nav>
     <ul>
-      <li><a routerLink="/" routerLinkActive="--active" [routerLinkActiveOptions]="{ exact: true }">Accueil</a></li>
-      <li><a routerLink="/shop" routerLinkActive="--active" [routerLinkActiveOptions]="{ exact: true }">Boutique</a></li>
-      <li><a routerLink="/account" routerLinkActive="--active" [routerLinkActiveOptions]="{ exact: true }">Mon compte</a></li>
-      <li><a href="#">Panier</a></li>
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Accueil</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/shop"
+          routerLinkActive="--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Boutique</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/account"
+          routerLinkActive="--active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Mon compte</a
+        >
+      </li>
+      <li><a routerLink="/cart" [routerLinkActive]="'--active'">Panier</a></li>
       <li *ngIf="isUserConnected()">
         <i class="fa-solid fa-right-from-bracket fa-lg" (click)="logout()"></i>
       </li>
