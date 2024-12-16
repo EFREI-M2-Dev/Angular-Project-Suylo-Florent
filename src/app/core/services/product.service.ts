@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import {forkJoin, map, Observable, switchMap} from "rxjs";
-import {ProductModel} from "../shared/models/product.model";
 import {LicenceService} from "./licence.service";
+import {ProductModel} from "../../shared/models/product.model";
 
 @Injectable({
   providedIn: 'root'

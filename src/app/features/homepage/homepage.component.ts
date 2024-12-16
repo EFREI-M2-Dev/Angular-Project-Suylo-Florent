@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { gsap } from 'gsap';
 import {ProductModel} from "../../shared/models/product.model";
-import {ProductService} from "../../services/product.service";
+import {ProductService} from "../../core/services/product.service";
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',

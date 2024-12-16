@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {LicenceModel} from "../shared/models/licence.model";
+import {LicenceModel} from "../../shared/models/licence.model";
 
 @Injectable({
   providedIn: 'root'

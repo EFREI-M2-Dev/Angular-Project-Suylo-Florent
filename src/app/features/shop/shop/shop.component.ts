@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {ProductModel} from "../../../shared/models/product.model";
-import {ProductService} from "../../../services/product.service";
+import {ProductService} from "../../../core/services/product.service";
 
 @Component({
   selector: 'app-shop',
@@ -19,7 +19,7 @@ export class ShopComponent {
 
   loadProducts() {
     this.productService.getProducts().subscribe(
-      data => {
+        (data: ProductModel[]) => {
         this.products = data;
       }
     )
