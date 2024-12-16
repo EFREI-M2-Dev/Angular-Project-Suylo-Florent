@@ -8,8 +8,7 @@
   &__image{
     img{
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       border-radius: 5px;
     }
   }
@@ -18,6 +17,7 @@
     position: sticky;
     top: 7rem;
     height: fit-content;
+
   }
 
   &__licence{
@@ -56,17 +56,52 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    margin-bottom: 4rem;
   }
 
   &__accordion{
     border-top: 1px solid rgba(146,140,138,0.8);
-    padding-top: 2rem;
-    margin-top: 2rem;
-    font-family: "ddin", sans-serif;
-    color: var(--purpleLight);
-    text-transform: uppercase;
-    font-weight: bold;
     cursor: pointer;
     display: flex;
+    appearance: none;
+    list-style: none;
+
+    summary{
+      font-size: 1.8rem;
+      padding: 2rem 0rem;
+      font-weight: bold;
+      font-family: "ddin", sans-serif;
+      color: var(--purpleLight);
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &::marker{
+        content: "";
+      }
+
+      svg  {
+        transition: all .3s ease-in-out;
+        path{
+          fill: var(--purpleLight);
+        }
+      }
+    }
+
+    &[open] summary svg{
+      transform: rotate(90deg);
+    }
+
+    &[open] div{
+      margin-bottom: 2rem;
+    }
+
+    div{
+      color: rgb(115, 115, 115);
+      font-size: 1.8rem;
+      font-family: "ddin", sans-serif;
+      line-height: 2;
+    }
   }
 }
