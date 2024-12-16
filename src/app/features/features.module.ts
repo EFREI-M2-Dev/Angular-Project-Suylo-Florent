@@ -10,6 +10,7 @@ import { InputFieldComponent } from './auth/input-field/input-field.component';
 import {LicenceCardComponent} from "../components/licence-card/licence-card.component";
 import {ProductCardComponent} from "../components/product-card/product-card.component";
 import { ShopComponent } from './shop/shop/shop.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ShopComponent } from './shop/shop/shop.component';
     LicenceCardComponent,
     ProductCardComponent,
     ShopComponent,
+    ProductComponent,
   ],
   imports: [
     CommonModule,

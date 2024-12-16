@@ -4,6 +4,7 @@ import { HomepageComponent } from './features/homepage/homepage.component';
 import { AuthComponent } from './features/auth/auth.component';
 import { authGuard } from './core/guards/auth.guard';
 import {ShopComponent} from "./features/shop/shop/shop.component";
+import {ProductComponent} from "./features/product/product.component";
 
 const routes: Routes = [
   {
@@ -21,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: 'products/:id',
-    component: ShopComponent,
+    component: ProductComponent,
   }
 ];
 
