@@ -19,15 +19,18 @@
       </li>
       <li>
         <a
-          routerLink="/account"
+          [routerLink]="isUserConnected() ? '/account' : '/auth/login'"
           routerLinkActive="--active"
           [routerLinkActiveOptions]="{ exact: true }"
           >Mon compte</a
         >
       </li>
       <li><a routerLink="/cart" [routerLinkActive]="'--active'">Panier</a></li>
-      <li *ngIf="isUserConnected()">
-        <i class="fa-solid fa-right-from-bracket fa-lg" (click)="logout()"></i>
+      <li *ngIf="isUserConnected()" class="button-logout">
+        <button (click)="logout()" class="button">
+          <i class="fa-solid fa-right-from-bracket fa-lg"></i>
+          Déconnexion
+        </button>
       </li>
     </ul>
   </nav>

@@ -6,6 +6,7 @@ import { authGuard } from './core/guards/auth.guard';
 import { ShopComponent } from './features/shop/shop/shop.component';
 import { CartComponent } from './features/cart/cart.component';
 import { ProductComponent } from './features/product/product.component';
+import {AccountComponent} from "./features/account/account.component";
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'products/:id',
     component: ProductComponent,
+  },
+  {
+    path: 'account',
+    component: AccountComponent,
   },
   {
     path: 'cart',

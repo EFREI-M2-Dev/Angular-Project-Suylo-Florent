@@ -13,6 +13,7 @@ import { CartComponent } from './cart/cart.component';
 import { BreadcrumbComponent } from './cart/breadcrumb/breadcrumb.component';
 import {LicenceCardComponent} from "../shared/licence-card/licence-card.component";
 import {ProductCardComponent} from "../shared/product-card/product-card.component";
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {ProductCardComponent} from "../shared/product-card/product-card.componen
     ProductComponent,
     CartComponent,
     BreadcrumbComponent,
+    AccountComponent,
   ],
   imports: [
     CommonModule,
