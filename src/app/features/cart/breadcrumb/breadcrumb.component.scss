@@ -1,18 +1,21 @@
 .breadcrumb {
-  padding-top: 104px;
+  padding-top: 114px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 6rem;
 
   ul {
+    display: flex;
+    gap: 30px;
+
     li {
       display: flex;
       align-items: center;
       gap: 8px;
 
-      > span.icon {
+      span.icon {
         display: flex;
         background-color: var(--purpleLight);
         height: 40px;

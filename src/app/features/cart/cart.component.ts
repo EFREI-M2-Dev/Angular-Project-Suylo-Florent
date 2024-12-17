@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { CartService } from 'src/app/core/services/cart.service';
+import { PayementService } from 'src/app/core/services/payement.service';
 import { ProductService } from 'src/app/core/services/product.service';
 import { UserService } from 'src/app/core/services/user.service';
+import { PayementModel } from 'src/app/shared/models/payement.model';
 import { ProductModel } from 'src/app/shared/models/product.model';
 
 @Component({
@@ -11,6 +14,8 @@ import { ProductModel } from 'src/app/shared/models/product.model';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
+  currentStep: number = 1;
+
   cartItems: any[] = [];
   userId?: string;
   totalWithoutVAT: number = 0;
@@ -20,10 +25,13 @@ export class CartComponent implements OnInit {
   recommandationsRecent: ProductModel[] = [];
   recommandationsLicence: ProductModel[] = [];
 
+  deliveryForm!: FormGroup;
+
   constructor(
     private cartService: CartService,
     private userService: UserService,
-    private productService: ProductService
+    private productService: ProductService,
+    private payementService: PayementService
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +41,8 @@ export class CartComponent implements OnInit {
     } else {
       alert('Veuillez vous connecter pour accéder à votre panier.');
     }
+
+    this.initForm();
   }
 
   loadCart(): void {
@@ -47,6 +57,16 @@ export class CartComponent implements OnInit {
         this.calculateTotal();
         this.loadRecommandations();
       });
+    });
+  }
+
+  initForm() {
+    this.deliveryForm = new FormGroup({
+      street: new FormControl('', [Validators.required]),
+      city: new FormControl('', [Validators.required]),
+      zip: new FormControl('', [Validators.required]),
+      lastName: new FormControl('', [Validators.required]),
+      firstName: new FormControl('', [Validators.required]),
     });
   }
 
@@ -120,5 +140,44 @@ export class CartComponent implements OnInit {
           (product) => !cartProductIds.includes(product.id)
         );
       });
+  }
+
+  onConfirm(): void {
+    this.currentStep = 2;
+  }
+
+  onSubmitAdress(): void {
+    if (this.deliveryForm.valid) {
+      this.currentStep = 3;
+
+      setTimeout(() => {
+        const newPayement: PayementModel = {
+          firstName: this.deliveryForm.value.firstName,
+          lastName: this.deliveryForm.value.lastName,
+          city: this.deliveryForm.value.city,
+          street: this.deliveryForm.value.street,
+          zip: this.deliveryForm.value.zip,
+          date: new Date().toISOString(),
+          products: this.cartItems.map((item) => ({
+            productId: item.productId,
+            quantity: item.quantity,
+          })),
+          amount: this.total,
+        };
+
+        this.payementService.addPayement(newPayement).subscribe(() => {
+          this.cartService.resetCart().subscribe(() => {
+            this.loadCart();
+            this.currentStep = 4;
+          });
+        });
+      }, 2000);
+    } else {
+      console.warn('Formulaire invalide');
+    }
+  }
+
+  onReset(): void {
+    this.currentStep = 1;
   }
 }

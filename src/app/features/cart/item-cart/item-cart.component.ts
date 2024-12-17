@@ -10,7 +10,7 @@ export class ItemCartComponent {
   @Input() quantity?: number;
   @Input() itemId?: string;
 
-  @Output() remove = new EventEmitter<string>(); // EventEmitter pour notifier le parent
+  @Output() remove = new EventEmitter<string>();
 
   @Output() quantityChange = new EventEmitter<number>();
 

@@ -6,7 +6,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SharedModule } from '../shared/shared.module';
 import { InfiniteScrollComponent } from './homepage/infinite-scroll/infinite-scroll.component';
 import { AuthComponent } from './auth/auth.component';
-import { InputFieldComponent } from './auth/input-field/input-field.component';
+import { InputFieldComponent } from '../shared/input-field/input-field.component';
 import { ShopComponent } from './shop/shop/shop.component';
 import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';

@@ -1,7 +1,7 @@
-<app-breadcrumb></app-breadcrumb>
+<app-breadcrumb [step]="currentStep"></app-breadcrumb>
 
-<div class="cart-container">
-  <section class="product-list">
+<div class="cart-container" *ngIf="currentStep === 1">
+  <section class="product-list" *ngIf="cartItems.length > 0">
     <app-item-cart
       *ngFor="let item of cartItems"
       [product]="item.product"
@@ -12,15 +12,84 @@
     >
     </app-item-cart>
   </section>
+  <section class="cart-empty" *ngIf="cartItems.length === 0">
+    <p>Votre panier est vide.</p>
+  </section>
   <section class="amount-details">
     <ul>
       <li>Prix sans TVA: {{ totalWithoutVAT }}€</li>
       <li>TVA: {{ vat }}€</li>
     </ul>
     <span>Total: {{ total }}€</span>
-    <button class="button">Confirmer</button>
+    <button
+      class="button"
+      (click)="onConfirm()"
+      [disabled]="cartItems.length === 0"
+    >
+      Confirmer
+    </button>
   </section>
 </div>
+
+<section *ngIf="currentStep === 2" class="address-form-section">
+  <form [formGroup]="deliveryForm" class="form-content">
+    <app-input-field
+      type="text"
+      placeholder="Nom"
+      formControlName="lastName"
+    ></app-input-field>
+
+    <app-input-field
+      type="text"
+      placeholder="Prénom"
+      formControlName="firstName"
+    ></app-input-field>
+
+    <app-input-field
+      type="street"
+      placeholder="Rue et numéro"
+      formControlName="street"
+    ></app-input-field>
+
+    <app-input-field
+      type="zip"
+      placeholder="Code postal"
+      formControlName="zip"
+    ></app-input-field>
+
+    <app-input-field
+      type="city"
+      placeholder="Ville"
+      formControlName="city"
+    ></app-input-field>
+  </form>
+
+  <section class="confirm-container">
+    <button
+      type="submit"
+      (click)="onSubmitAdress()"
+      [disabled]="deliveryForm.invalid"
+      class="button"
+    >
+      Procéder au payement
+    </button>
+  </section>
+</section>
+
+<section *ngIf="currentStep === 3" class="payement">
+  <p>Achat en cours... Merci de patienter.</p>
+</section>
+
+<section *ngIf="currentStep === 4" class="payement">
+  <div class="delivery-confirmed">
+    <p>Le livraison a bien été confirmé, merci pour votre confiance.</p>
+    <span
+      >Vous pouvez retrouver les détails de votre commande sur votre
+      profil.</span
+    >
+    <button class="button" (click)="onReset()">Retour</button>
+  </div>
+</section>
 
 <section class="recommandation">
   <h2>Nos nouveautés</h2>

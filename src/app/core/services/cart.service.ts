@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable, switchMap } from 'rxjs';
 import { ProductModel } from 'src/app/shared/models/product.model';
 import { environment } from 'src/env/env';
 import { UserService } from './user.service';
@@ -51,5 +51,18 @@ export class CartService {
 
   removeFromCart(id: string): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/cart/${id}`);
+  }
+
+  resetCart(): Observable<any> {
+    const userId = this.userService.getSavedUserId();
+
+    return this.http.get<any[]>(`${this.apiUrl}/cart?userId=${userId}`).pipe(
+      switchMap((cartItems) => {
+        const deleteRequests = cartItems.map((item) =>
+          this.http.delete(`${this.apiUrl}/cart/${item.id}`)
+        );
+        return forkJoin(deleteRequests);
+      })
+    );
   }
 }

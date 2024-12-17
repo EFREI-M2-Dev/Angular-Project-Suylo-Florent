@@ -37,7 +37,6 @@ export class ProductComponent {
     this.cartService.addToCart(this.product).subscribe(
       (response) => {
         console.log('Produit ajouté au panier', response);
-        // Tu peux aussi afficher un message de confirmation ou mettre à jour un état de panier
       },
       (error) => {
         console.error("Erreur lors de l'ajout au panier", error);

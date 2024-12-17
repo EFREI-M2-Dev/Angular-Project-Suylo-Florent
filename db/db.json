@@ -51,26 +51,9 @@
       "productId": "6",
       "userId": "user123",
       "quantity": 1
-    },
-    {
-      "id": "bff8",
-      "productId": "2",
-      "userId": "4",
-      "quantity": 1
-    },
-    {
-      "id": "3ac5",
-      "productId": "1",
-      "userId": "4",
-      "quantity": 1
-    },
-    {
-      "id": "3142",
-      "productId": "4",
-      "userId": "4",
-      "quantity": 1
     }
   ],
+  "payements": [],
   "roles": [
     {
       "id": "1",

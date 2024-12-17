@@ -4,12 +4,18 @@
   gap: 40px;
   max-width: 1196px;
   margin: auto;
-  padding: 0 2rem 4rem;
+  padding: 0 2rem 6rem;
 
   .product-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  .cart-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .amount-details {
@@ -34,10 +40,57 @@
   }
 }
 
+.address-form-section {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 40px;
+  max-width: 1196px;
+  margin: auto;
+  padding: 0 2rem 6rem;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    & > div.form-bottom {
+      grid-column: 1 / -1;
+      gap: 20px;
+      display: flex;
+    }
+  }
+
+  .confirm-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--lightGray);
+    border-radius: 12px;
+    height: fit-content;
+  }
+}
+
+.payement {
+  max-width: 1196px;
+  margin: auto;
+  padding: 0 2rem 6rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.delivery-confirmed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
 .recommandation {
   max-width: 1196px;
   margin: auto;
-  padding: 0 2rem 8rem;
+  padding: 0 2rem 6rem;
   display: flex;
   flex-direction: column;
   gap: 20px;
