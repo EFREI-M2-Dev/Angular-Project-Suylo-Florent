@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { CartService } from 'src/app/core/services/cart.service';
+import { ProductService } from 'src/app/core/services/product.service';
 import { UserService } from 'src/app/core/services/user.service';
+import { ProductModel } from 'src/app/shared/models/product.model';
 
 @Component({
   selector: 'app-cart',
@@ -15,9 +17,13 @@ export class CartComponent implements OnInit {
   vat: number = 0;
   total: number = 0;
 
+  recommandationsRecent: ProductModel[] = [];
+  recommandationsLicence: ProductModel[] = [];
+
   constructor(
     private cartService: CartService,
-    private userService: UserService
+    private userService: UserService,
+    private productService: ProductService
   ) {}
 
   ngOnInit(): void {
@@ -39,6 +45,7 @@ export class CartComponent implements OnInit {
           product: products.find((product) => product.id === item.productId),
         }));
         this.calculateTotal();
+        this.loadRecommandations();
       });
     });
   }
@@ -63,8 +70,6 @@ export class CartComponent implements OnInit {
   }
 
   calculateTotal() {
-    console.log('Cart Items:', this.cartItems);
-
     const totalWithoutVAT = this.cartItems.reduce((sum, item) => {
       const priceString = item.product?.price;
       const quantity = parseInt(item.quantity);
@@ -93,5 +98,27 @@ export class CartComponent implements OnInit {
     this.totalWithoutVAT = roundedTotalWithoutVAT;
     this.vat = roundedVat;
     this.total = roundedTotal;
+  }
+
+  loadRecommandations() {
+    this.productService.getRecentProducts().subscribe((data) => {
+      const cartProductIds = this.cartItems.map((item) => item.product.id);
+      this.recommandationsRecent = data.filter(
+        (product) => !cartProductIds.includes(product.id)
+      );
+    });
+
+    const allLicensesInCart = this.cartItems.map(
+      (item) => item.product.licence
+    );
+
+    this.productService
+      .getProductsByLicenses(allLicensesInCart)
+      .subscribe((data) => {
+        const cartProductIds = this.cartItems.map((item) => item.product.id);
+        this.recommandationsLicence = data.filter(
+          (product) => !cartProductIds.includes(product.id)
+        );
+      });
   }
 }

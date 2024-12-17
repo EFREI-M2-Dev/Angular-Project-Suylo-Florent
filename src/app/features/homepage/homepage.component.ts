@@ -1,13 +1,14 @@
 import {
   AfterViewInit,
   Component,
-  ElementRef, OnInit,
+  ElementRef,
+  OnInit,
   QueryList,
   ViewChildren,
 } from '@angular/core';
 import { gsap } from 'gsap';
-import {ProductModel} from "../../shared/models/product.model";
-import {ProductService} from "../../core/services/product.service";
+import { ProductModel } from '../../shared/models/product.model';
+import { ProductService } from '../../core/services/product.service';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -18,11 +19,9 @@ export class HomepageComponent implements AfterViewInit, OnInit {
   floatingTexts!: QueryList<ElementRef>;
   products: ProductModel[] = [];
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {}
 
   ngAfterViewInit() {
-    const hero = document.querySelector('.athena') as HTMLElement;
-
     this.floatingTexts.forEach((text, index) => {
       this.galaxyFloatEffect(text.nativeElement, index);
     });
@@ -53,10 +52,8 @@ export class HomepageComponent implements AfterViewInit, OnInit {
   }
 
   loadProducts() {
-    this.productService.getProductsHome().subscribe(
-      data => {
-        this.products = data;
-      }
-    )
+    this.productService.getProductsHome().subscribe((data) => {
+      this.products = data;
+    });
   }
 }

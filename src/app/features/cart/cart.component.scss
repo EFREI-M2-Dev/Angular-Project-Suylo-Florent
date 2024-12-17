@@ -1,8 +1,10 @@
 .cart-container {
   display: grid;
   grid-template-columns: 1fr 400px;
-  padding: 20px 90px;
   gap: 40px;
+  max-width: 1196px;
+  margin: auto;
+  padding: 0 2rem 4rem;
 
   .product-list {
     display: flex;
@@ -33,5 +35,28 @@
 }
 
 .recommandation {
-  padding: 20px 90px 60px;
+  max-width: 1196px;
+  margin: auto;
+  padding: 0 2rem 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  > h2 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  > .items-carousel {
+    overflow: auto;
+
+    .items-container {
+      display: flex;
+      gap: 20px;
+
+      > app-product-card {
+        flex: 0 0 300px;
+      }
+    }
+  }
 }

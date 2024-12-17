@@ -53,10 +53,22 @@
       "quantity": 1
     },
     {
-      "id": "a578",
-      "productId": "3",
+      "id": "bff8",
+      "productId": "2",
       "userId": "4",
-      "quantity": "3"
+      "quantity": 1
+    },
+    {
+      "id": "3ac5",
+      "productId": "1",
+      "userId": "4",
+      "quantity": 1
+    },
+    {
+      "id": "3142",
+      "productId": "4",
+      "userId": "4",
+      "quantity": 1
     }
   ],
   "roles": [

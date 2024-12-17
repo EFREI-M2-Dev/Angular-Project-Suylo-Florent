@@ -22,4 +22,28 @@
   </section>
 </div>
 
-<section class="recommandation">Quelques recommandation...</section>
+<section class="recommandation">
+  <h2>Nos nouveautés</h2>
+  <div class="items-carousel">
+    <div class="items-container">
+      <app-product-card
+        *ngFor="let product of recommandationsRecent"
+        [product]="product"
+      >
+      </app-product-card>
+    </div>
+  </div>
+</section>
+
+<section class="recommandation" *ngIf="recommandationsLicence.length > 0">
+  <h2>Par rapport a vos goûts</h2>
+  <div class="items-carousel">
+    <div class="items-container">
+      <app-product-card
+        *ngFor="let product of recommandationsLicence"
+        [product]="product"
+      >
+      </app-product-card>
+    </div>
+  </div>
+</section>
