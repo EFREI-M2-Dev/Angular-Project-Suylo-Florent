@@ -6,7 +6,7 @@
   <div class="item-content">
     <div class="description">
       <span>{{ product.name }}</span>
-      <p>{{ product.description }}</p>
+      <p>{{ product.subtitle }}</p>
     </div>
 
     <select
@@ -20,7 +20,7 @@
     </select>
 
     <div class="bottom-item">
-      <span>{{ product.price }}€</span>
+      <span class="price">{{ product.price }}€</span>
       <span (click)="removeFromCart()">Supprimer</span>
     </div>
   </div>

@@ -1,0 +1,26 @@
+.account{
+  &__head{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.3rem;
+    color: var(--white);
+    background: linear-gradient(95.52deg, #0F0B1D 4.91%, #391C73 56.9%, #1D122C 97.17%);
+    padding-top: 5rem;
+
+    h1{
+      text-transform: uppercase;
+      font-size: 6rem;
+      font-family: "Anton", sans-serif;
+    }
+
+    p{
+      font-family: "ddin", sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+
+}

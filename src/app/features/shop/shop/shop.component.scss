@@ -2,13 +2,14 @@
   padding-bottom: 8rem;
 
   &__head{
-    height: 50vh;
+    height:30vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2.3rem;
     color: var(--white);
+    padding-top: 5rem;
     background: linear-gradient(95.52deg, #0F0B1D 4.91%, #391C73 56.9%, #1D122C 97.17%);
 
     h1{
