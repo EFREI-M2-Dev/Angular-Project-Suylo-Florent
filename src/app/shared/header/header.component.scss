@@ -81,7 +81,30 @@
           margin-bottom: 12px;
           cursor: pointer;
         }
+
+        .cart-quantity{
+          position: absolute;
+          background-color: var(--purpleLight);
+          color: var(--white);
+          top: -.5rem;
+          right: -1.4rem;
+          width: 2.5rem;
+          height: 2.5rem;
+          font-family: "ddin", sans-serif;
+          font-weight: bold;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 2rem;
+        }
       }
     }
+  }
+
+  .button-logout .button{
+    padding: 0;
+    width: 5rem;
+    height: 5rem;
   }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
+import {CartService} from "../../core/services/cart.service";
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,10 @@ import { AuthService } from 'src/app/core/services/auth.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(private authService: AuthService, private router: Router) {}
+  cartItems: number = 0;
+  private addToCartListener = () => {};
+
+  constructor(private authService: AuthService, private router: Router, private cartService: CartService) {}
 
   logout() {
     this.authService.logout();
@@ -18,5 +22,25 @@ export class HeaderComponent {
 
   isUserConnected() {
     return this.authService.isUserConnected();
+  }
+
+  updateCartItems() {
+    this.cartService.getCountCartItems(this.authService.getSavedUser()!).subscribe((count) => {
+      this.cartItems = count;
+    });
+  }
+
+  ngOnInit() {
+    this.updateCartItems();
+
+    this.addToCartListener = () => {
+      this.updateCartItems();
+    }
+
+    document.addEventListener('addToCart', this.addToCartListener);
+  }
+
+  ngOnDestroy() {
+    document.removeEventListener('addToCart', this.addToCartListener);
   }
 }

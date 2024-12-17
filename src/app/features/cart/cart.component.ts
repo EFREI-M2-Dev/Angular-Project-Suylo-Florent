@@ -81,12 +81,14 @@ export class CartComponent implements OnInit {
           this.loadCart();
         });
     }
+    document.dispatchEvent(new Event('addToCart'));
   }
 
   removeFromCart(id: string): void {
     this.cartService.removeFromCart(id).subscribe(() => {
       this.loadCart();
     });
+    document.dispatchEvent(new Event('addToCart'));
   }
 
   calculateTotal() {

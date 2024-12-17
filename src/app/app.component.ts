@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
     </ng-container>
     <router-outlet></router-outlet>
     <ng-container *ngIf="!shouldHideHeader">
+      <app-newsletter></app-newsletter>
+    </ng-container>
+    <ng-container *ngIf="!shouldHideHeader">
       <app-footer></app-footer>
     </ng-container>
   `,

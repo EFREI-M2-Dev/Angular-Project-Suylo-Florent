@@ -35,20 +35,8 @@
   ],
   "cart": [
     {
-      "id": "1",
-      "productId": "1",
-      "userId": "1",
-      "quantity": 1
-    },
-    {
-      "id": "73a2",
-      "productId": "1",
-      "userId": "4",
-      "quantity": "1"
-    },
-    {
-      "id": "138a",
-      "productId": "3",
+      "id": "c23d",
+      "productId": "5",
       "userId": "4",
       "quantity": 1
     }
