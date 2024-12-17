@@ -1,52 +1,67 @@
 <main class="product container">
   <section class="product-details">
     <div class="product-details__image">
-      <img [src]="product.imgCover">
+      <img [src]="product.imgCover" />
     </div>
     <div class="product-details__content">
       <h1 class="product-details__title">
         {{ product.name }}
       </h1>
-      <p class="product-details__price">
-        {{ product.price }}
-      </p>
+      <p class="product-details__price">{{ product.price }}€</p>
       <p class="product-details__description">
         {{ product.description }}
       </p>
-      <button class="product-details__button button">
-        Ajouter au panier - {{ product.price }}
+      <button class="product-details__button button" (click)="addToCart()">
+        Ajouter au panier - {{ product.price }}€
       </button>
       <details class="product-details__accordion">
         <summary class="product-details__accordion__summary">
           Description
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.70492 6L8.29492 7.41L12.8749 12L8.29492 16.59L9.70492 18L15.7049 12L9.70492 6Z" fill="black"/>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.70492 6L8.29492 7.41L12.8749 12L8.29492 16.59L9.70492 18L15.7049 12L9.70492 6Z"
+              fill="black"
+            />
           </svg>
         </summary>
         <div class="product-details__accordion__content">
-          {{product.subtitle}}
+          {{ product.subtitle }}
         </div>
       </details>
       <details class="product-details__accordion">
         <summary class="product-details__accordion__summary">
           Caractéristiques
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.70492 6L8.29492 7.41L12.8749 12L8.29492 16.59L9.70492 18L15.7049 12L9.70492 6Z" fill="black"/>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.70492 6L8.29492 7.41L12.8749 12L8.29492 16.59L9.70492 18L15.7049 12L9.70492 6Z"
+              fill="black"
+            />
           </svg>
         </summary>
         <div class="product-details__accordion__content">
+          <p>Sexe : {{ product.sex }}</p>
+          <p>Date de sortie : {{ product.releaseDate }}</p>
           <p>
-            Sexe : {{ product.sex }}
-          </p>
-          <p>
-            Date de sortie : {{ product.releaseDate }}
-          </p>
-          <p>
-            Produit mise en avant : {{ product.isFeatured ? 'Oui' : 'Non' }}
+            Produit mise en avant : {{ product.isFeatured ? "Oui" : "Non" }}
           </p>
         </div>
       </details>
-      <app-licence-card [licence]="product.licence" class="product-details__licence"></app-licence-card>
+      <app-licence-card
+        [licence]="product.licence"
+        class="product-details__licence"
+      ></app-licence-card>
     </div>
   </section>
 </main>

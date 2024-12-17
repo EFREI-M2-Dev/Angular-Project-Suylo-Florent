@@ -1,7 +1,9 @@
 <a class="product-card" [routerLink]="['/products', product.id]">
   <div class="product-card__img">
     <img
-      [src]="product.imgCover ? product.imgCover : 'assets/home/athena-img-1.png'"
+      [src]="
+        product.imgCover ? product.imgCover : 'assets/home/athena-img-1.png'
+      "
       alt="Athena test"
       width="1044"
       height="1368"
@@ -12,10 +14,11 @@
       <p class="product-card__texts__name">
         {{ product.name }}
       </p>
-      <p class="product-card__texts__price">
-        {{ product.price }}
-      </p>
+      <p class="product-card__texts__price">{{ product.price }}€</p>
     </div>
-    <app-licence-card class="product-card__licence" [licence]="product.licence" />
+    <app-licence-card
+      class="product-card__licence"
+      [licence]="product.licence"
+    />
   </div>
 </a>

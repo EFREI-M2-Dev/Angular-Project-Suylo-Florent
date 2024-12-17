@@ -2,16 +2,23 @@
 
 <div class="cart-container">
   <section class="product-list">
-    <app-item-cart></app-item-cart>
-    <app-item-cart></app-item-cart>
-    <app-item-cart></app-item-cart>
+    <app-item-cart
+      *ngFor="let item of cartItems"
+      [product]="item.product"
+      [quantity]="item.quantity"
+      [itemId]="item.id"
+      (remove)="removeFromCart($event)"
+      (quantityChange)="updateQuantity(item.id, $event)"
+    >
+    </app-item-cart>
   </section>
   <section class="amount-details">
     <ul>
-      <li>Prix sans TVA:</li>
-      <li>TVA:</li>
+      <li>Prix sans TVA: {{ totalWithoutVAT }}€</li>
+      <li>TVA: {{ vat }}€</li>
     </ul>
-    <span>Total: </span>
+    <span>Total: {{ total }}€</span>
+    <button class="button">Confirmer</button>
   </section>
 </div>
 

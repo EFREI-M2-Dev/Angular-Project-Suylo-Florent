@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   getSavedUser() {
-    return localStorage.getItem('user');
+    return JSON.parse(localStorage.getItem('user') || '{}');
   }
 
   isUserConnected() {
