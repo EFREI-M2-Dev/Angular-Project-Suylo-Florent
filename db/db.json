@@ -33,6 +33,14 @@
       "role": 1
     }
   ],
+  "cart": [
+    {
+      "id": "1",
+      "productId": "1",
+      "userId": "1",
+      "quantity": 1
+    }
+  ],
   "roles": [
     {
       "id": "1",

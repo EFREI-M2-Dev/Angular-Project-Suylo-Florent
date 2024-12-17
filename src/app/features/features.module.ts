@@ -11,9 +11,10 @@ import { ShopComponent } from './shop/shop/shop.component';
 import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
 import { BreadcrumbComponent } from './cart/breadcrumb/breadcrumb.component';
-import {LicenceCardComponent} from "../shared/licence-card/licence-card.component";
-import {ProductCardComponent} from "../shared/product-card/product-card.component";
+import { LicenceCardComponent } from '../shared/licence-card/licence-card.component';
+import { ProductCardComponent } from '../shared/product-card/product-card.component';
 import { AccountComponent } from './account/account.component';
+import { ItemCartComponent } from './cart/item-cart/item-cart.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AccountComponent } from './account/account.component';
     CartComponent,
     BreadcrumbComponent,
     AccountComponent,
+    ItemCartComponent,
   ],
   imports: [
     CommonModule,
