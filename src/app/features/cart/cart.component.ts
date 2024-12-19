@@ -1,17 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/core/services/auth.service';
 import { CartService } from 'src/app/core/services/cart.service';
 import { PayementService } from 'src/app/core/services/payement.service';
 import { ProductService } from 'src/app/core/services/product.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { PayementModel } from 'src/app/shared/models/payement.model';
 import { ProductModel } from 'src/app/shared/models/product.model';
-import {
-  lettersValidator,
-  streetValidator,
-  zipCodeValidator
-} from "../../shared/validators/custom-validators";
+import {lettersValidator, streetValidator, zipCodeValidator} from "./cart-validators";
+
 
 @Component({
   selector: 'app-cart',
@@ -165,6 +161,7 @@ export class CartComponent implements OnInit {
           street: this.deliveryForm.value.street,
           zip: this.deliveryForm.value.zip,
           date: new Date().toISOString(),
+          userId: this.userId!,
           products: this.cartItems.map((item) => ({
             productId: item.productId,
             quantity: item.quantity,

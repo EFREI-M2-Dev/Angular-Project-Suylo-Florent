@@ -6,6 +6,7 @@ export interface PayementModel {
   street: string;
   zip: string;
   date: string;
+  userId: string;
   products: {
     productId: string;
     quantity: number;

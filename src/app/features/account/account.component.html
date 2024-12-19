@@ -38,5 +38,34 @@
     <h2>
       Mes <span>Commandes</span>
     </h2>
+
+    <div class="account__orders__listing">
+      <div class="account__orders__item" *ngFor="let order of userOrders">
+        <div class="account__orders__item-header">
+          <h3>Commande n°{{ order.id }}</h3>
+          <p>{{ order.date | date: 'dd/MM/yyyy hh:mm:ss' }}</p>
+        </div>
+        <div class="account__orders__item-content">
+          <p>
+            Contenu de la commande :
+          </p>
+          <div class="account__orders__item-listing">
+            <div class="account__orders__item-products" *ngFor="let product of order.products">
+              <div class="account__orders__item-details" *ngIf="product.productId | productInfo | async as productInfo">
+                <p>{{ productInfo.name }}</p>
+                <p>{{ productInfo.price }}&nbsp;€</p>
+                <img [src]="productInfo.imgCover" [alt]="productInfo.name"/>
+              </div>
+            </div>
+          </div>
+          <p *ngIf="order.amount > 0" class="account__orders__item-amount">
+            Total : {{ order.amount }}&nbsp;€
+          </p>
+        </div>
+      </div>
+      <p *ngIf="!userOrders.length" class="account__orders--no">
+          Vous n'avez pas encore passé de commande.
+      </p>
+    </div>
   </section>
 </main>

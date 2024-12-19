@@ -1,4 +1,3 @@
-// src/app/shared/validators/custom-validators.ts
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
 export function zipCodeValidator(): ValidatorFn {
