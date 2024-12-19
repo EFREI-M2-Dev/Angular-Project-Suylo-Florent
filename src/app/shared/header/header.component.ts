@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -9,7 +9,7 @@ import { CartService } from '../../core/services/cart.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
   cartItems: number = 0;
   private addToCartListener = () => {};
 
@@ -36,7 +36,7 @@ export class HeaderComponent {
       });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.updateCartItems();
 
     this.addToCartListener = () => {

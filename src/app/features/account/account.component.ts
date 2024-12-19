@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { UserModel } from '../../shared/models/user.model';
 import { UserService } from '../../core/services/user.service';
 import {PayementModel} from "../../shared/models/payement.model";
@@ -8,13 +8,13 @@ import {PayementModel} from "../../shared/models/payement.model";
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.scss'],
 })
-export class AccountComponent {
+export class AccountComponent implements OnInit {
   user: UserModel = {} as UserModel;
   userOrders: PayementModel[] = [];
 
   constructor(private userService: UserService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loadUserInfos();
     this.loadOrders();
   }

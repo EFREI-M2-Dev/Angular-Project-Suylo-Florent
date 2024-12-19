@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ProductModel } from '../../shared/models/product.model';
 import { ProductService } from '../../core/services/product.service';
 import { ActivatedRoute } from '@angular/router';
@@ -9,7 +9,7 @@ import { CartService } from 'src/app/core/services/cart.service';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss'],
 })
-export class ProductComponent {
+export class ProductComponent implements OnInit {
   product: ProductModel = {} as ProductModel;
   paramId: string = '0';
   private route = inject(ActivatedRoute);

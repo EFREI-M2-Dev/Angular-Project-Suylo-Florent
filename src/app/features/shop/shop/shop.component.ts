@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { ProductModel } from '../../../shared/models/product.model';
 import { ProductService } from '../../../core/services/product.service';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.scss'],
 })
-export class ShopComponent {
+export class ShopComponent implements OnInit{
   products: ProductModel[] = [];
   isUserAdmin: boolean = false;
 
