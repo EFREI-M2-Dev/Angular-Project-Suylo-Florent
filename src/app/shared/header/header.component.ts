@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
-import {CartService} from "../../core/services/cart.service";
+import { CartService } from '../../core/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +13,11 @@ export class HeaderComponent {
   cartItems: number = 0;
   private addToCartListener = () => {};
 
-  constructor(private authService: AuthService, private router: Router, private cartService: CartService) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private cartService: CartService
+  ) {}
 
   logout() {
     this.authService.logout();
@@ -25,9 +29,11 @@ export class HeaderComponent {
   }
 
   updateCartItems() {
-    this.cartService.getCountCartItems(this.authService.getSavedUser()!).subscribe((count) => {
-      this.cartItems = count;
-    });
+    this.cartService
+      .getCountCartItems(this.authService.getSavedUser()!)
+      .subscribe((count) => {
+        this.cartItems = count;
+      });
   }
 
   ngOnInit() {
@@ -35,7 +41,7 @@ export class HeaderComponent {
 
     this.addToCartListener = () => {
       this.updateCartItems();
-    }
+    };
 
     document.addEventListener('addToCart', this.addToCartListener);
   }

@@ -28,10 +28,13 @@
       <li>
         <a routerLink="/cart" [routerLinkActive]="'--active'">
           Panier
-          <span  class="cart-quantity">
-            {{ cartItems}}
+          <span class="cart-quantity">
+            {{ cartItems }}
           </span>
         </a>
+      </li>
+      <li *ngIf="!isUserConnected()">
+        <a routerLink="/auth/login" [routerLinkActive]="'active'">Connexion</a>
       </li>
       <li *ngIf="isUserConnected()" class="button-logout">
         <button (click)="logout()" class="button" title="Déconnexion">
