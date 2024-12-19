@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as bcrypt from 'bcryptjs';
+import {environment} from "../../../env/env";
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  private apiUrl = environment.apiUrl;
   user: { id: number; username: string } | undefined;
 
   constructor(private http: HttpClient) {}
@@ -17,12 +19,12 @@ export class AuthService {
       password: hashedPassword,
       role: 1,
     };
-    return this.http.post('http://localhost:3000/users', newUser).subscribe();
+    return this.http.post(`${this.apiUrl}/users`, newUser).subscribe();
   }
 
   login(user: { email: string; password: string }) {
     return this.http.get<any[]>(
-      `http://localhost:3000/users?email=${user.email}`
+      `${this.apiUrl}/users?email=${user.email}`
     );
   }
 
@@ -54,7 +56,7 @@ export class AuthService {
 
   private getSavedUserInfo() {
     return this.http.get(
-      'http://localhost:3000/users?id=' + this.getSavedUser()
+      `${this.apiUrl}/users?id=` + this.getSavedUser()
     );
   }
 }
