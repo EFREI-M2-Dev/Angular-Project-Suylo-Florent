@@ -21,7 +21,7 @@
       "firstName": "Admin",
       "lastName": "Admin",
       "email": "admin@gmail.com",
-      "password": "password",
+      "password": "$2a$10$2yi5EAOJkOnm79h6iQPg0eFyf8oSEWLsECKYH5DzmeXg0ZP9UR1Am",
       "role": 2
     },
     {
@@ -29,7 +29,7 @@
       "firstName": "Test",
       "lastName": "User",
       "email": "test@gmail.com",
-      "password": "password",
+      "password": "$2a$10$2yi5EAOJkOnm79h6iQPg0eFyf8oSEWLsECKYH5DzmeXg0ZP9UR1Am",
       "role": 1
     }
   ],

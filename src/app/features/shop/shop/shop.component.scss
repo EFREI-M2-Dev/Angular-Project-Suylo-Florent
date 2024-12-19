@@ -1,8 +1,8 @@
-.shop{
+.shop {
   padding-bottom: 8rem;
 
-  &__head{
-    height:30vh;
+  &__head {
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,25 +10,39 @@
     gap: 2.3rem;
     color: var(--white);
     padding-top: 5rem;
-    background: linear-gradient(95.52deg, #0F0B1D 4.91%, #391C73 56.9%, #1D122C 97.17%);
+    background: linear-gradient(
+      95.52deg,
+      #0f0b1d 4.91%,
+      #391c73 56.9%,
+      #1d122c 97.17%
+    );
 
-    h1{
+    h1 {
       text-transform: uppercase;
       font-size: 6rem;
       font-family: "Anton", sans-serif;
     }
 
-    p{
+    p {
       font-family: "ddin", sans-serif;
       font-size: 2rem;
       font-weight: bold;
     }
   }
 
-  &__products{
+  &__admin__actions {
+    max-width: 1196px;
+    margin: auto;
+    padding: 0 2rem;
+    padding-top: 4rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__products {
     margin-top: 4rem;
 
-    .products__grid{
+    .products__grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 2rem;

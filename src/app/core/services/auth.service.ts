@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import * as bcrypt from 'bcryptjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,21 +10,19 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  addUser(user: { email: string; password: string }) {
+  async addUser(user: { email: string; password: string }) {
+    const hashedPassword = await bcrypt.hash(user.password, 10);
     const newUser = {
       email: user.email,
-      password: user.password,
+      password: hashedPassword,
       role: 1,
     };
     return this.http.post('http://localhost:3000/users', newUser).subscribe();
   }
 
-  login(user: { username: string; password: string }) {
-    return this.http.get(
-      'http://localhost:3000/users?username=' +
-        user.username +
-        '&password=' +
-        user.password
+  login(user: { email: string; password: string }) {
+    return this.http.get<any[]>(
+      `http://localhost:3000/users?email=${user.email}`
     );
   }
 
@@ -37,7 +36,7 @@ export class AuthService {
   }
 
   getSavedUser() {
-    return JSON.parse(localStorage.getItem('user') || '{}');
+    return localStorage.getItem('user');
   }
 
   isUserConnected() {

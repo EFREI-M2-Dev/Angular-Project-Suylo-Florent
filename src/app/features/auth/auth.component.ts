@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { passwordMatchValidator } from './password-match.validator';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
+import * as bcrypt from 'bcryptjs';
 
 @Component({
   selector: 'app-auth',
@@ -59,15 +60,27 @@ export class AuthComponent implements OnInit {
 
   login() {
     this.authService.login(this.authForm.value).subscribe(
-      (user: any) => {
-        if (user.length === 0)
+      (users: any[]) => {
+        if (users.length === 0) {
           alert('Erreur dans le pseudo ou le mot de passe');
-        this.authService.user = user[0];
-        if (!this.authService.user) return;
+          return;
+        }
+        const user = users[0];
+
+        const isPasswordCorrect = bcrypt.compareSync(
+          this.authForm.value.password,
+          user.password
+        );
+        if (!isPasswordCorrect) {
+          alert('Erreur dans le pseudo ou le mot de passe');
+          return;
+        }
+
+        this.authService.user = user;
         this.authService.saveUser();
         this.router.navigate(['/']);
       },
-      (error) => {
+      (error: any) => {
         alert('Erreur dans la requête');
       }
     );
