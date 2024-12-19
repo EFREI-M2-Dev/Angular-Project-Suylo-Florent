@@ -47,30 +47,45 @@
       placeholder="Nom"
       formControlName="lastName"
     ></app-input-field>
+    <div *ngIf="deliveryForm.get('lastName')?.touched && deliveryForm.get('lastName')?.errors?.['invalidName']" class="error">
+      {{ deliveryForm.get('lastName')?.errors?.['invalidName'] }}
+    </div>
 
     <app-input-field
       type="text"
       placeholder="Prénom"
       formControlName="firstName"
     ></app-input-field>
+    <div *ngIf="deliveryForm.get('firstName')?.touched && deliveryForm.get('firstName')?.errors?.['invalidName']" class="error">
+      {{ deliveryForm.get('firstName')?.errors?.['invalidName'] }}
+    </div>
 
     <app-input-field
       type="street"
       placeholder="Rue et numéro"
       formControlName="street"
     ></app-input-field>
+    <div *ngIf="deliveryForm.get('street')?.touched && deliveryForm.get('street')?.errors?.['invalidStreet']" class="error">
+      {{ deliveryForm.get('street')?.errors?.['invalidStreet'] }}
+    </div>
 
     <app-input-field
       type="zip"
       placeholder="Code postal"
       formControlName="zip"
     ></app-input-field>
+    <div *ngIf="deliveryForm.get('zip')?.touched && deliveryForm.get('zip')?.errors?.['invalidZipCode']" class="error">
+      {{ deliveryForm.get('zip')?.errors?.['invalidZipCode'] }}
+    </div>
 
     <app-input-field
       type="city"
       placeholder="Ville"
       formControlName="city"
     ></app-input-field>
+    <div *ngIf="deliveryForm.get('city')?.touched && deliveryForm.get('city')?.errors?.['invalidName']" class="error">
+      {{ deliveryForm.get('city')?.errors?.['invalidName'] }}
+    </div>
   </form>
 
   <section class="confirm-container">

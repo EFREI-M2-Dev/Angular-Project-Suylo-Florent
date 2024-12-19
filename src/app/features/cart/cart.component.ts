@@ -7,6 +7,11 @@ import { ProductService } from 'src/app/core/services/product.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { PayementModel } from 'src/app/shared/models/payement.model';
 import { ProductModel } from 'src/app/shared/models/product.model';
+import {
+  lettersValidator,
+  streetValidator,
+  zipCodeValidator
+} from "../../shared/validators/custom-validators";
 
 @Component({
   selector: 'app-cart',
@@ -62,11 +67,11 @@ export class CartComponent implements OnInit {
 
   initForm() {
     this.deliveryForm = new FormGroup({
-      street: new FormControl('', [Validators.required]),
-      city: new FormControl('', [Validators.required]),
-      zip: new FormControl('', [Validators.required]),
-      lastName: new FormControl('', [Validators.required]),
-      firstName: new FormControl('', [Validators.required]),
+      street: new FormControl('', [Validators.required, streetValidator()]),
+      city: new FormControl('', [Validators.required, lettersValidator()]),
+      zip: new FormControl('', [Validators.required, zipCodeValidator()]),
+      lastName: new FormControl('', [Validators.required, lettersValidator()]),
+      firstName: new FormControl('', [Validators.required, lettersValidator()]),
     });
   }
 
@@ -170,6 +175,7 @@ export class CartComponent implements OnInit {
         this.payementService.addPayement(newPayement).subscribe(() => {
           this.cartService.resetCart().subscribe(() => {
             this.loadCart();
+            document.dispatchEvent(new Event('addToCart'));
             this.currentStep = 4;
           });
         });
