@@ -19,9 +19,15 @@
       </p>
       <p class="product-card__texts__price">{{ product.price }}€</p>
     </div>
-    <app-licence-card
-      class="product-card__licence"
-      [licence]="product.licence"
-    />
+    <div class="product-card__options">
+      <app-licence-card
+        class="product-card__licence"
+        [licence]="product.licence"
+      />
+
+      <button class="product-card__add" (click)="addToCart($event)" title="Ajouter l'article au panier">
+        <i class="fa-solid fa-cart-shopping fa-lg"></i>
+      </button>
+    </div>
   </div>
 </a>
