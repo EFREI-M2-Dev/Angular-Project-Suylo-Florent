@@ -8,7 +8,9 @@
   </section>
 
   <section class="shop__admin__actions" *ngIf="isUserAdmin">
-    <button class="button">+ Ajouter nouveau produit</button>
+    <button class="button" (click)="goToFormProduct()">
+      + Ajouter nouveau produit
+    </button>
   </section>
 
   <section class="shop__products">
@@ -17,6 +19,8 @@
         <app-product-card
           *ngFor="let product of products"
           [product]="product"
+          [onEdit]="goToFormProduct.bind(this, product.id)"
+          [canEdit]="isUserAdmin"
         />
       </div>
     </div>

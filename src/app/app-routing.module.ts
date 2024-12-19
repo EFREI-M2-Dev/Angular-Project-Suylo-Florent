@@ -6,7 +6,8 @@ import { authGuard } from './core/guards/auth.guard';
 import { ShopComponent } from './features/shop/shop/shop.component';
 import { CartComponent } from './features/cart/cart.component';
 import { ProductComponent } from './features/product/product.component';
-import {AccountComponent} from "./features/account/account.component";
+import { AccountComponent } from './features/account/account.component';
+import { FormProductComponent } from './features/form-product/form-product.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,14 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent,
+  },
+  {
+    path: 'form-product/:id',
+    component: FormProductComponent,
+  },
+  {
+    path: 'form-product',
+    component: FormProductComponent,
   },
 ];
 

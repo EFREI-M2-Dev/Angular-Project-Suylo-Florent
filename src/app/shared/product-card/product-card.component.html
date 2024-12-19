@@ -1,4 +1,7 @@
 <a class="product-card" [routerLink]="['/products', product.id]">
+  <div *ngIf="canEdit" (click)="handleEdit($event)" class="product-card__edit">
+    <i class="fa-solid fa-pencil fa-lg"></i>
+  </div>
   <div class="product-card__img">
     <img
       [src]="

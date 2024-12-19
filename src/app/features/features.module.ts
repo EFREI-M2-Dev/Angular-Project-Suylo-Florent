@@ -15,6 +15,7 @@ import { LicenceCardComponent } from '../shared/licence-card/licence-card.compon
 import { ProductCardComponent } from '../shared/product-card/product-card.component';
 import { AccountComponent } from './account/account.component';
 import { ItemCartComponent } from './cart/item-cart/item-cart.component';
+import { FormProductComponent } from './form-product/form-product.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ItemCartComponent } from './cart/item-cart/item-cart.component';
     BreadcrumbComponent,
     AccountComponent,
     ItemCartComponent,
+    FormProductComponent,
   ],
   imports: [
     CommonModule,

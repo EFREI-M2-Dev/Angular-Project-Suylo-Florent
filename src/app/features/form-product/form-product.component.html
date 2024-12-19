@@ -1,0 +1,11 @@
+<section class="product-form">
+  <h1 *ngIf="productId">Modifier le produit {{ productId }}</h1>
+  <h1 *ngIf="!productId">Créer un nouveau produit</h1>
+
+  <form>
+    <label for="name">Nom du produit :</label>
+    <input type="text" id="name" name="name" />
+
+    <button type="submit">{{ productId ? "Mettre à jour" : "Créer" }}</button>
+  </form>
+</section>
