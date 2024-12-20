@@ -17,6 +17,18 @@ Projet généré avec [Angular CLI](https://github.com/angular/angular-cli) vers
 - Lancer l'API : ```npm run api```
 - Lancer le serveur : ```ng serve```
 
+### Comptes
+Le visiteur peut seulement naviguer sur le site, voir chaque page etc. Il ne peut cependant pas modifier ni ajouter des produits.
+
+- Visiteur :  
+  - email : ```test@gmail.com```
+  - password : ```password```
+
+L'admin peut modifier et ajouter des produits.
+
+- Admin :  
+  - email : ```louis.lubineau@efrei.net``` OU ```florent.paris@efrei.net```
+  - password : ```password```
 
 ## Consignes du projet : 
 - Faire un projet from scratch avec sujet libre ✅
