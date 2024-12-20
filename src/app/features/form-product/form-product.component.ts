@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LicenceService } from 'src/app/core/services/licence.service';
 import { ProductService } from 'src/app/core/services/product.service';
 import { LicenceModel } from 'src/app/shared/models/licence.model';
+import {dateValidator, priceValidator} from "./product.validator";
 
 @Component({
   selector: 'app-form-product',
@@ -36,12 +37,12 @@ export class FormProductComponent implements OnInit {
       name: ['', [Validators.required]],
       subtitle: [''],
       description: [''],
-      price: ['', [Validators.required]],
+      price: ['', [Validators.required, priceValidator()]],
       licence: ['', Validators.required],
       imgCover: [''],
       sex: ['', Validators.required],
       isFeatured: [false],
-      releaseDate: [''],
+      releaseDate: ['', dateValidator()],
     });
 
     if (this.productId) {

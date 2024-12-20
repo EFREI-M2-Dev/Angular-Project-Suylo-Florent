@@ -22,12 +22,25 @@
     ></app-input-field>
 
     <app-input-field
-      type="date"
-      placeholder="Date de sortie"
+      type="text"
+      placeholder="Date de sortie (format: JJ-MM-AAAA)"
       formControlName="releaseDate"
     ></app-input-field>
+    <div *ngIf="productForm.get('releaseDate')?.touched && productForm.get('releaseDate')?.errors?.['invalidDate']" class="error">
+      {{ productForm.get('releaseDate')?.errors?.['invalidDate'] }}
+    </div>
 
-    <div>
+    <app-input-field
+      type="text"
+      placeholder="Entrer le prix du produit"
+      formControlName="price"
+    ></app-input-field>
+    <div *ngIf="productForm.get('price')?.touched && productForm.get('price')?.errors?.['invalidPrice']" class="error">
+      {{ productForm.get('price')?.errors?.['invalidPrice'] }}
+    </div>
+
+
+    <div class="select-input">
       <label for="sex">Sexe :</label>
       <select id="sex" formControlName="sex">
         <option value="">Sélectionnez</option>
@@ -37,18 +50,12 @@
       </select>
     </div>
 
-    <div>
+    <div class="select-input">
       <label for="isFeatured">Mettre en avant :</label>
       <input id="isFeatured" type="checkbox" formControlName="isFeatured" />
     </div>
 
-    <app-input-field
-      type="text"
-      placeholder="Entrer le prix du produit"
-      formControlName="price"
-    ></app-input-field>
-
-    <div>
+    <div class="select-input">
       <label for="licence">Licence:</label>
       <select
         id="licence"
@@ -59,23 +66,24 @@
           {{ licence.name }}
         </option>
       </select>
-      <button type="button" (click)="onCreateLicence()">
+      <button type="button" class="button" (click)="onCreateLicence()">
         Créer une nouvelle licence
       </button>
     </div>
 
-    <div>
-      <label for="imgCover">Image URL:</label>
-      <input id="imgCover" formControlName="imgCover" />
-    </div>
+    <app-input-field
+      type="text"
+      placeholder="Image URL"
+      formControlName="imgCover" id="imgCover"
+    ></app-input-field>
 
-    <div>
-      <label for="file">Upload Image:</label>
+    <div class="select-input">
+      <label for="file">Upload Image :</label>
       <input id="file" type="file" (change)="onFileSelected($event)" />
     </div>
 
     <div *ngIf="productForm.get('imgCover')?.value">
-      <label>Image Preview:</label>
+      <label>L'image :</label>
       <img
         [src]="productForm.get('imgCover')?.value"
         alt="Product Image"
