@@ -11,15 +11,77 @@
 
     <app-input-field
       type="text"
+      placeholder="Sous-titre du produit"
+      formControlName="subtitle"
+    ></app-input-field>
+
+    <app-input-field
+      type="text"
       placeholder="Description du produit"
       formControlName="description"
     ></app-input-field>
+
+    <app-input-field
+      type="date"
+      placeholder="Date de sortie"
+      formControlName="releaseDate"
+    ></app-input-field>
+
+    <div>
+      <label for="sex">Sexe :</label>
+      <select id="sex" formControlName="sex">
+        <option value="">Sélectionnez</option>
+        <option value="M">Masculin</option>
+        <option value="F">Féminin</option>
+        <option value="O">Autre</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="isFeatured">Mettre en avant :</label>
+      <input id="isFeatured" type="checkbox" formControlName="isFeatured" />
+    </div>
 
     <app-input-field
       type="text"
       placeholder="Entrer le prix du produit"
       formControlName="price"
     ></app-input-field>
+
+    <div>
+      <label for="licence">Licence:</label>
+      <select
+        id="licence"
+        formControlName="licence"
+        (change)="onLicenceChange($event)"
+      >
+        <option *ngFor="let licence of licences" [value]="licence.id">
+          {{ licence.name }}
+        </option>
+      </select>
+      <button type="button" (click)="onCreateLicence()">
+        Créer une nouvelle licence
+      </button>
+    </div>
+
+    <div>
+      <label for="imgCover">Image URL:</label>
+      <input id="imgCover" formControlName="imgCover" />
+    </div>
+
+    <div>
+      <label for="file">Upload Image:</label>
+      <input id="file" type="file" (change)="onFileSelected($event)" />
+    </div>
+
+    <div *ngIf="productForm.get('imgCover')?.value">
+      <label>Image Preview:</label>
+      <img
+        [src]="productForm.get('imgCover')?.value"
+        alt="Product Image"
+        style="max-width: 200px; max-height: 200px"
+      />
+    </div>
 
     <button class="button" type="submit" [disabled]="productForm.invalid">
       {{ productId ? "Mettre à jour" : "Créer" }}

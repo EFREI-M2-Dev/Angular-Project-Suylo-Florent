@@ -122,4 +122,20 @@ export class ProductService {
         )
       );
   }
+
+  createProduct(product: any) {
+    return this.http.post('http://localhost:3000/products', product);
+  }
+
+  updateProduct(id: string, product: any): Observable<any> {
+    return this.getProductById(id).pipe(
+      map((existingProduct) => ({
+        ...existingProduct,
+        ...product,
+      })),
+      switchMap((updatedProduct) =>
+        this.http.put(`http://localhost:3000/products/${id}`, updatedProduct)
+      )
+    );
+  }
 }

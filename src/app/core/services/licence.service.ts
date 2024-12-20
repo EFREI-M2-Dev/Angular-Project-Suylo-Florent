@@ -15,4 +15,12 @@ export class LicenceService {
   getLicenceById(id: LicenceModel): Observable<LicenceModel> {
     return this.http.get<LicenceModel>(`${this.apiUrl}/licences/${id}`);
   }
+
+  getLicences(): Observable<LicenceModel[]> {
+    return this.http.get<LicenceModel[]>(`${this.apiUrl}/licences`);
+  }
+
+  createLicence(licence: Partial<LicenceModel>): Observable<LicenceModel> {
+    return this.http.post<LicenceModel>(`${this.apiUrl}/licences`, licence);
+  }
 }
