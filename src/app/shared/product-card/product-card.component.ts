@@ -1,6 +1,7 @@
 import { Component, Input, Output } from '@angular/core';
 import { ProductModel } from '../models/product.model';
 import {CartService} from "../../core/services/cart.service";
+import {AuthService} from "../../core/services/auth.service";
 
 @Component({
   selector: 'app-product-card',
@@ -8,11 +9,13 @@ import {CartService} from "../../core/services/cart.service";
   styleUrls: ['./product-card.component.scss'],
 })
 export class ProductCardComponent {
+  userLogged: boolean = false;
   @Input() product: ProductModel = {} as ProductModel;
   @Input() onEdit!: () => void;
   @Input() canEdit!: boolean;
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private authService: AuthService) {
+    this.userLogged = this.authService.isUserConnected();
   }
 
   handleEdit(event: MouseEvent): void {

@@ -3,6 +3,8 @@ import { ProductModel } from '../../shared/models/product.model';
 import { ProductService } from '../../core/services/product.service';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/core/services/cart.service';
+import {UserService} from "../../core/services/user.service";
+import {AuthService} from "../../core/services/auth.service";
 
 @Component({
   selector: 'app-product',
@@ -11,12 +13,14 @@ import { CartService } from 'src/app/core/services/cart.service';
 })
 export class ProductComponent implements OnInit {
   product: ProductModel = {} as ProductModel;
+  userLogged: boolean  = false;
   paramId: string = '0';
   private route = inject(ActivatedRoute);
 
   constructor(
     private productService: ProductService,
-    private cartService: CartService
+    private cartService: CartService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -25,6 +29,7 @@ export class ProductComponent implements OnInit {
       this.paramId = paramId;
       this.loadProductView();
     }
+    this.userLogged = this.authService.isUserConnected();
   }
 
   loadProductView() {

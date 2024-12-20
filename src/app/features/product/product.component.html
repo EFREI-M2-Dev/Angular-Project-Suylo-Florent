@@ -11,8 +11,11 @@
       <p class="product-details__description">
         {{ product.description }}
       </p>
-      <button class="product-details__button button" (click)="addToCart()">
+      <button class="product-details__button button" (click)="addToCart()" *ngIf="userLogged">
         Ajouter au panier - {{ product.price }}€
+      </button>
+      <button class="product-details__button button" [routerLink]="['/login']" *ngIf="!userLogged">
+        Connectez-vous pour ajouter au panier !
       </button>
       <details class="product-details__accordion">
         <summary class="product-details__accordion__summary">

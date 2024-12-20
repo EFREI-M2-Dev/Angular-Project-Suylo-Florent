@@ -25,7 +25,7 @@
         [licence]="product.licence"
       />
 
-      <button class="product-card__add" (click)="addToCart($event)" title="Ajouter l'article au panier">
+      <button class="product-card__add" *ngIf="userLogged" (click)="addToCart($event)" title="Ajouter l'article au panier">
         Ajouter au panier
         <i class="fa-solid fa-cart-shopping fa-lg"></i>
       </button>

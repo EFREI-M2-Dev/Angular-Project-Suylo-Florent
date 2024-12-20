@@ -7,6 +7,7 @@ import { UserService } from 'src/app/core/services/user.service';
 import { PayementModel } from 'src/app/shared/models/payement.model';
 import { ProductModel } from 'src/app/shared/models/product.model';
 import {lettersValidator, streetValidator, zipCodeValidator} from "./cart-validators";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -32,15 +33,14 @@ export class CartComponent implements OnInit {
     private cartService: CartService,
     private userService: UserService,
     private productService: ProductService,
-    private payementService: PayementService
+    private payementService: PayementService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.userId = this.userService.getSavedUserId() || undefined;
     if (this.userId) {
       this.loadCart();
-    } else {
-      alert('Veuillez vous connecter pour accéder à votre panier.');
     }
 
     this.initForm();

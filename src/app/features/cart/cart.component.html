@@ -21,8 +21,11 @@
     >
     </app-item-cart>
   </section>
-  <section class="cart-empty" *ngIf="cartItems.length === 0">
+  <section class="cart-empty" *ngIf="cartItems.length === 0 && userId">
     <p>Votre panier est vide.</p>
+  </section>
+  <section class="cart-empty" *ngIf="!userId">
+    <p>Connectez-vous pour pouvoir ajouter au panier !</p>
   </section>
   <section class="amount-details">
     <ul>
@@ -115,7 +118,7 @@
   </div>
 </section>
 
-<section class="recommandation">
+<section class="recommandation" *ngIf="recommandationsRecent.length > 0">
   <h2>Nos <span>Nouveautés</span></h2>
   <div class="items-carousel">
     <div class="items-container">

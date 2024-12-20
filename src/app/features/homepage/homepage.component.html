@@ -50,7 +50,7 @@
         avons décidé de la représenter sous le regard bienveillant de la statue
         d'Athéna, dans une position confiante et sereine.
       </p>
-      <button class="button">Découvrir la figurine</button>
+      <button class="button" [routerLink]="'/products/1'">Découvrir la figurine</button>
     </div>
   </section>
 
@@ -67,7 +67,7 @@
             nos produits.
           </p>
         </div>
-        <button class="button">Découvrir la boutique</button>
+        <button class="button" [routerLink]="'/shop'">Découvrir la boutique</button>
       </div>
       <div class="products-list__content">
         <app-product-card *ngFor="let product of products" [product]="product"/>

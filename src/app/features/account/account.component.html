@@ -18,11 +18,11 @@
         <img src="assets/avatar.jpg" alt="Avatar image"/>
       </div>
       <div class="account__content__infos">
-        <div class="account__content__infos__item">
+        <div class="account__content__infos__item" *ngIf="user.firstName">
           <span>Nom : </span>
           <span>{{ user.firstName }}</span>
         </div>
-        <div class="account__content__infos__item">
+        <div class="account__content__infos__item" *ngIf="user.lastName">
           <span>Prénom : </span>
           <span>{{ user.lastName }}</span>
         </div>
