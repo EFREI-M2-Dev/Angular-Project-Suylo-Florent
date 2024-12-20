@@ -1,4 +1,4 @@
-<a class="product-card" [routerLink]="['/products', product.id]">
+<a class="product-card" [routerLink]="['/products', product.id]" appHoverCard>
   <div *ngIf="canEdit" (click)="handleEdit($event)" class="product-card__edit">
     <i class="fa-solid fa-pencil fa-lg"></i>
   </div>
@@ -26,6 +26,7 @@
       />
 
       <button class="product-card__add" (click)="addToCart($event)" title="Ajouter l'article au panier">
+        Ajouter au panier
         <i class="fa-solid fa-cart-shopping fa-lg"></i>
       </button>
     </div>
