@@ -43,5 +43,5 @@ Projet généré avec [Angular CLI](https://github.com/angular/angular-cli) vers
   - **Pipe Custom** 
     - Minimum 1  ✅ : [```product-info.pipe.ts```](src/app/shared/pipes/product-info.pipe.ts)
   - **Directive Custom**  
-    - Minimum 1 ❌ : En cours
+    - Minimum 1 ✅ : [```hover-card.directive.ts```](src/app/shared/directives/hover-card.directive.ts)
 
