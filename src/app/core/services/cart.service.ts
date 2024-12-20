@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 import {forkJoin, map, Observable, switchMap} from 'rxjs';
-import { ProductModel } from 'src/app/shared/models/product.model';
-import { environment } from 'src/env/env';
-import { UserService } from './user.service';
+import {ProductModel} from 'src/app/shared/models/product.model';
+import {environment} from 'src/env/env';
+import {UserService} from './user.service';
 import {CartModel} from "../../shared/models/cart.model";
 
 @Injectable({
@@ -12,15 +12,41 @@ import {CartModel} from "../../shared/models/cart.model";
 export class CartService {
   private apiUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient, private userService: UserService) {}
+  constructor(private http: HttpClient, private userService: UserService) {
+  }
 
-  addToCart(product: ProductModel) {
+  addToCart(product: ProductModel): Observable<any> {
+    const userId = this.userService.getSavedUserId()!;
     const cartItem = {
       productId: product.id,
-      userId: this.userService.getSavedUserId()!,
+      userId: userId,
       quantity: 1,
     };
-    return this.http.post(`${this.apiUrl}/cart`, cartItem);
+
+    return new Observable((observer) => {
+      this.http.get<any[]>(`${this.apiUrl}/cart?userId=${userId}`).subscribe((cartItems) => {
+        const existingItem = cartItems.find(item => item.productId === product.id && item.userId === userId);
+
+        if (existingItem) {
+          existingItem.quantity += 1;
+          this.http.put(`${this.apiUrl}/cart/${existingItem.id}`, existingItem).subscribe(
+            (response) => {
+              observer.next(response);
+              observer.complete();
+            },
+            (error) => observer.error(error)
+          );
+        } else {
+          this.http.post(`${this.apiUrl}/cart`, cartItem).subscribe(
+            (response) => {
+              observer.next(response);
+              observer.complete();
+            },
+            (error) => observer.error(error)
+          );
+        }
+      });
+    });
   }
 
   getCartByUser(userId: string): Observable<CartModel[]> {
@@ -32,6 +58,7 @@ export class CartService {
       map(cartItems => cartItems.reduce((total, item) => total + +item.quantity, 0))
     );
   }
+
   getProductDetails(productIds: string[]): Observable<any[]> {
     return this.http.get<any[]>(
       `${this.apiUrl}/products?id=${productIds.join('&id=')}`
