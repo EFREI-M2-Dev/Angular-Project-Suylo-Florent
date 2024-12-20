@@ -124,7 +124,7 @@ export class ProductService {
   }
 
   createProduct(product: any) {
-    return this.http.post('http://localhost:3000/products', product);
+    return this.http.post(`${this.apiUrl}/products`, product);
   }
 
   updateProduct(id: string, product: any): Observable<any> {
@@ -134,7 +134,7 @@ export class ProductService {
         ...product,
       })),
       switchMap((updatedProduct) =>
-        this.http.put(`http://localhost:3000/products/${id}`, updatedProduct)
+        this.http.put(`${this.apiUrl}/products/${id}`, updatedProduct)
       )
     );
   }
