@@ -83,7 +83,29 @@
       "quantity": 1
     }
   ],
-  "payements": [],
+  "payements": [
+    {
+      "id": "a40b",
+      "firstName": "Louis",
+      "lastName": "Lubineau",
+      "city": "Villejuif",
+      "street": "18 rue de la Republique",
+      "zip": "94800",
+      "date": "2024-12-20T14:05:15.912Z",
+      "userId": "2",
+      "products": [
+        {
+          "productId": "165f",
+          "quantity": 1
+        },
+        {
+          "productId": "2",
+          "quantity": 1
+        }
+      ],
+      "amount": 863.86
+    }
+  ],
   "roles": [
     {
       "id": "1",
@@ -237,6 +259,42 @@
       "sex": "M",
       "isFeatured": false,
       "releaseDate": "2024-12-05"
+    },
+    {
+      "id": "165f",
+      "name": "Jing-Liu",
+      "subtitle": "",
+      "description": " Autrefois Championne de l'épée du Luofu, elle est à l'origine des légendes sur la puissance incontestée des Chevaliers des nuages. À présent, son nom a été effacé des registres, et elle est devenue une traîtresse à Xianzhou évoluant sur la fine frontière qui sépare la raison du mara.",
+      "price": "289.99",
+      "licence": "ce06",
+      "imgCover": "https://i.ebayimg.com/images/g/tqMAAOSw~9RlLcnP/s-l1200.jpg",
+      "sex": "F",
+      "isFeatured": false,
+      "releaseDate": "12-09-2023"
+    },
+    {
+      "id": "7113",
+      "name": "Jean Bart ",
+      "subtitle": "",
+      "description": "La figurine \"Azur Lane Jean Bart Marine Sword Premier Neige Ver.\" de 26 cm est une représentation saisissante de Jean Bart, un personnage du jeu vidéo populaire \"Azur Lane\". Cette figurine dépeint Jean Bart dans une version hivernale élégante, mettant en avant sa présence imposante et son allure majestueuse. La taille de 26 cm permet de capturer avec précision les détails de son uniforme et de son épée, ainsi que son expression confiante et puissante, reflétant son statut de bateau de guerre redouté et respecté dans le jeu. Jean Bart, dans \"Azur Lane\", est un cuirassé incarné sous les traits d'une femme forte et indépendante. Connu pour son caractère stoïque et son style de combat impitoyable, Jean Bart incarne la puissance et la dignité. ",
+      "price": "359.99",
+      "licence": "dc1a",
+      "imgCover": "https://www.mangatori.fr/2015849-large_default/wings-wing50032-azur-lane-figure-jean-bart-marine-sword-premier-neige-.jpg",
+      "sex": "F",
+      "isFeatured": false,
+      "releaseDate": "10-08-2021"
+    },
+    {
+      "id": "8bc7",
+      "name": "Keqing",
+      "subtitle": "L'alioth des Sept étoiles de Liyue",
+      "description": "",
+      "price": "189.99",
+      "licence": "9a0b",
+      "imgCover": "https://down-ph.img.susercontent.com/file/ph-11134207-7qul6-lgn8ixoro0km29",
+      "sex": "F",
+      "isFeatured": true,
+      "releaseDate": "10-10-2020"
     }
   ],
   "licences": [
@@ -275,6 +333,18 @@
     {
       "id": "43bc",
       "name": "Assassination Classroom"
+    },
+    {
+      "id": "ce06",
+      "name": "Honkai Star Rail"
+    },
+    {
+      "id": "dc1a",
+      "name": "Azur Lane"
+    },
+    {
+      "id": "9a0b",
+      "name": "Genshin Impact"
     }
   ]
 }
